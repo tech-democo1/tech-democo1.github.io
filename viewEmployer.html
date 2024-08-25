@@ -52,7 +52,7 @@
       <h2>Doc Management System</h2>
       <ul class="nav nav-pills nav-stacked">
         <li><a href="home.html">Dashboard</a></li>
-     <li class="active"><a href="#section2.html">Employer Profile List</a></li>
+     <li class="active"><a href="employer.html">Employer Profile List</a></li>
      <li ><a href="applicationList.html">Processing List</a></li>
      <li ><a href="systemSetting.html">System Setting</a></li>
       </ul><br>
@@ -338,6 +338,9 @@
                 </tr>
               </table>
               <br>
+
+
+              
               <table class="table-bordered">
                 <tr><td colspan="5">Travel Document:</td></tr>
                 <tr>
@@ -418,8 +421,8 @@
 
                 <button class="accordionPrint">Normal Set</button>
                 <div class="panelPrint">
-                  <p style=" padding-right: 10px;">Receipt<span id="addressProofStatus" class="text-bg-primary" > Ready</span><button type="submit">Print</button> </p>
-                  <p style=" padding-right: 10px;">PH Branches Doc<span id="addressProofStatus" class="text-bg-primary" > Ready</span><button type="submit">Print</button> </p>
+                  <p style=" padding-right: 10px;">Receipt<span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span> </p>
+                  <p style=" padding-right: 10px;">PH Branches Doc<span id="addressProofStatus" class="text-bg-primary" > Ready</span><button onclick="openPrintDocDialog()" type="submit">Print</button> </p>
                   <p style=" padding-right: 10px;">Helper Doc<span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span></p>
                   <p style=" padding-right: 10px;">HK Sets<span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span></p>
                   <p style=" padding-right: 10px;">ID407 Contract<span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span></p>
@@ -894,7 +897,8 @@
               <input type="text" id="engName" name="engName" value="F" readonly required><br>
               <label for="engName">HKID number:</label>
             <input type="text" id="engName" name="engName" value="" readonly required>
-            </td></tr>
+            </td>
+          </tr>
 
               <!--<tr><td>
                 <img src="clp.png" alt="Girl in a jacket" width="120" height="80"> 
@@ -916,6 +920,85 @@
           <button >Edit</button>
           <button onclick="closePreview()">close</button>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="printDocDialog" class="modal">
+  <div class="modal-content">
+    <span onclick="closePreview()" class="close">&times;</span>
+    <div class="preview-container">
+      <div class="row">
+        <span style="text-align: left;">PH Branches Set </span>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <table class="table table-bordered table-responsive">
+            <tr>
+              <td>Order</td>
+              <td>Document</td>
+            </tr>
+            <tr>
+              <td>
+                <select id="language1" name="language">
+                  <option selected value="english">1</option>
+                  <option value="chinese">2</option>
+                  <option value="chinese">3</option>
+                  <option value="chinese">4</option>
+                  <!-- Add more language options as needed -->
+                </select>
+              </td>
+              <td>JOB ORDER</td>
+            </tr>
+            <tr>
+              <td>
+                <select id="language2" name="language">
+                  <option value="english">1</option>
+                  <option value="chinese" selected>2</option>
+                  <option value="korean">3</option>
+                  <option value="japanese">4</option>
+                  <!-- Add more language options as needed -->
+                </select>
+              </td>
+              <td>ID988A</td>
+            </tr>
+            <tr>
+              <td>
+                <select id="language3" name="language">
+                  <option value="l1">1</option>
+                  <option value="l2">2</option>
+                  <option value="l3" selected>3</option>
+                  <option value="l4">4</option>
+                  <!-- Add more language options as needed -->
+                </select>
+              </td>
+              <td>SERVICE AGREEMENT</td>
+            </tr>
+            <tr>
+              <td>
+                <select id="language4" name="language">
+                  <option value="a1">1</option>
+                  <option value="a2">2</option>
+                  <option value="a3">3</option>
+                  <option value="a4" selected>4</option>
+                  <!-- Add more language options as needed -->
+                </select>
+              </td>
+              <td>(HELPER) LABOUR SIGN</td>
+            </tr>
+          </table>
+        </div>
+        <div class="col-sm-9">
+          <img src="joborder.png" alt="Girl in a jacket" width="500" height="800"> 
+        </div>
+      </div>
+      <br>
+      <br>
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+        <button onclick="closePreview()">Back</button>
+        <button>Print</button>
       </div>
     </div>
   </div>
@@ -1255,6 +1338,12 @@ for (i = 0; i < acc.length; i++) {
 }
   */
 
+  
+
+  function openPrintDocDialog() {
+      document.getElementById("printDocDialog").style.display = "block";
+    }
+
 function openPreviewDialog() {
       document.getElementById("previewDialog").style.display = "block";
     }
@@ -1268,6 +1357,7 @@ function openPreviewDialog() {
       document.getElementById("updatedDocDialog").style.display = "none";
       document.getElementById("labourCalDia").style.display = "none";
       document.getElementById("extendVisaDialog").style.display = "none";
+      document.getElementById("printDocDialog").style.display = "none";
     }
 
     
