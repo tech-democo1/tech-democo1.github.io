@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DIS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 550px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+        
+    /* On small screens, set height to 'auto' for the grid */
+    @media screen and (max-width: 767px) {
+      .row.content {height: auto;} 
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse visible-xs">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Doc Management System</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li ><a href="home">Dashboard</a></li>
+        <li class="active"><a href="#">Employer</a></li>
+        <li><a href="#">Gender</a></li>
+        <li><a href="#">Geo</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-2 sidenav hidden-xs">
+      <h2>Doc Management System</h2>
+      <ul class="nav nav-pills nav-stacked">
+        <li><a href="home">Dashboard</a></li>
+     <li><a href="employer">Employer Profile List</a></li>
+     <li class="active"><a href="applicationList">Processing List</a></li>
+     <li><a href="systemSetting">System Setting</a></li>
+
+      </ul><br>
+    </div>
+    <br>
+    
+    <div class="col-sm-10">
+     
+     
+        
+      
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="well">
+            <div class="tab">
+               <!-- <button class="tablinks" onclick="openCity(event, 'Paris')">All Application</button>-->
+                <button class="tablinks" onclick="openCity(event, 'London')">Pending to Consulate</button>
+              </div>
+
+
+              <!-- Tab content -->
+            <div id="Paris" class="tabcontent">
+             
+
+             
+
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <h4 style="margin-right: auto;"></h4>
+
+            </div>
+
+            
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                    <th>Worker Type</th>
+                    <th>Contract No.</th>
+                    <th>Employer's Name</th>
+                    <th>Employer's Phone</th>
+                    <th>Helper's Name</th>
+                    <th>Application Start Date</th>
+                    <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                    <td>OVERSEA</td>
+                    <td>C-123456</td>
+                  <td onclick="redirectToNextPage()">John Doe</td>
+                  <td>123-456-7890</td>
+                  <td>May</td>
+                  <td>13/3/2024</td>
+                  <td>In Immigration</td>
+                </tr>
+                <tr>
+                    <td>OVERSEA</td>
+                    <td>C-9182982</td>
+                    <td>CHAN WAI</td>
+                    <td>98765432</td>
+                    <td>Susan</td>
+                    <td>13/6/2024</td>
+                    <td>Information Missing</td>
+                </tr>
+                <tr>
+                    <td>OVERSEA-EXHK</td>
+                    <td>C-2837618</td>
+                  <td>WONG WAI</td>
+                  <td>98765432</td>
+                  <td>Amy</td>
+                  <td>13/2/2024</td>
+                  <td>Pending to Consulate</td>
+                </tr>
+                <tr>
+                    <td>RENEW</td>
+                    <td>C1223323</td>
+                  <td>CHOW WAI</td>
+                  <td>98765432</td>
+                  <td>Zoe</td>
+                  <td>13/5/2024</td>
+                  <td>Completed</td>
+                </tr>
+
+                <tr>
+                    <td>DIRECT HIRE</td>
+                    <td>C-24144142</td>
+                    <td>KWOK HING</td>
+                    <td>23144532</td>
+                    <td>Kay</td>
+                    <td>13/5/2024</td>
+                    <td>Pending to Consulate</td>
+                </tr>
+
+              </tbody>
+            </table>
+
+        </div>
+
+
+        <div id="London" class="tabcontent">
+
+          <div>
+            <input type="text" id="filterText" placeholder="Enter contract no.">
+            <input type="button" value="Filter" onclick="applyFilter()">
+          </div>
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              
+               <p style="margin-right: auto;">
+                    Total 2 sets of Employment Contracts are selected.
+                </p>
+                <button type="button" onclick="viewTransmittalForm()">View Transmittal Form</button>
+              </div>
+              
+  
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th></th>
+                      <th>Employer's Name</th>
+                      <th>Helper's Name</th>
+                      <th>N/R/T Status</th>
+                      <th>Contract No.</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><div>
+                        <input type="checkbox" id="scales" name="scales" checked />
+                      </div></td>
+                    <td>WONG WAI</td>
+                    <td>Amy</td>
+                    <td>N - OVERSEA</td>
+                    <td>C-2837618</td>
+                  </tr>
+                  <tr>
+                    <td><div>
+                        <input type="checkbox" id="scales" name="scales" checked />
+                      </div></td>
+                    <td>KWOK HING</td>
+                    <td>Kay</td>
+                    <td>R - Renew</td>
+                    <td>C-24144142</td>
+                </tr>
+  
+                </tbody>
+              </table>
+
+
+            </div>
+
+           
+          </div>
+        </div>
+     
+      </div>
+      
+
+    </div>
+  </div>
+</div>
+
+<div id="section2">
+  <!-- Content for the "Age" section -->
+
+</div>
+
+</body>
+</html>
+
+
+<script>
+  function redirectToCreate() {
+    window.location.href = "addEmployer";
+  }
+  function redirectToNextPage() {
+    // Logic to redirect to the next page
+    window.location.href = 'viewEmployer';
+  }
+  openCity(event, 'London');
+  function openCity(event, cityName) {
+      var i, tabcontent, tablinks;
+      
+      // Hide all tab content
+      tabcontent = document.getElementsByClassName('tabcontent');
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = 'none';
+      }
+      
+      // Remove 'active' class from all tab links
+      tablinks = document.getElementsByClassName('tablinks');
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove('active');
+      }
+      
+      // Show the selected tab content and set the button as active
+      document.getElementById(cityName).style.display = 'block';
+      event.currentTarget.classList.add('active');
+    }
+
+
+</script>
+
+
+<style>
+  .tab {
+      overflow: hidden;
+    }
+    
+    .tab button {
+      background-color: #f2f2f2;
+      border: none;
+      color: black;
+      padding: 10px 20px;
+      cursor: pointer;
+      float: left;
+      transition: background-color 0.3s;
+    }
+    
+    .tab button:hover {
+      background-color: #ddd;
+    }
+    
+    .tab button.active {
+      background-color: #ccc;
+    }
+    
+    .tabcontent {
+      display: none;
+      padding: 20px;
+    }
+
+    .accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}
+
+</style>

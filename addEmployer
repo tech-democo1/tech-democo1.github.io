@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DIS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+   
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse visible-xs">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Doc Management System</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li ><a href="home">Dashboard</a></li>
+        <li class="active"><a href="#">Employer</a></li>
+        <li><a href="#">Gender</a></li>
+        <li><a href="#">Geo</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-2 sidenav hidden-xs">
+      <h2>Doc Management System</h2>
+      <ul class="nav nav-pills nav-stacked">
+        <li><a href="home">Dashboard</a></li>
+     <li class="active"><a href="#section2">Employer Profile List</a></li>
+
+      </ul><br>
+    </div>
+    <br>
+    
+    <div class="col-sm-10">
+     
+     
+        <!-- <div class="well"><form action="/search" method="GET">
+        <div class="search-container">
+          <input type="text" name="query" placeholder="Type in Employer's HKID / Name / Phone Number to search..." style="width: 500px;" />
+          <button type="submit">Search</button>
+        </div>
+        </form></div>-->
+      
+      <div class="row">
+        <h4 style=" padding-left: 15px;">Add Employer Profile</h4>
+        <div class="col-sm-8">
+          <div class="well">
+        
+            <p><form action="/submit-profile" method="post" enctype="multipart/form-data">
+              <fieldset>
+                <legend>Profile Information</legend>
+                <div>
+                  <label for="idUpload">Upload HKID:</label>
+                  <input type="file" id="idUpload" name="idUpload" accept=".pdf, .jpg, .png" required onchange="previewImage()">
+                </div>
+                <div>
+                  <label for="address">HKID Number:</label>
+                  <input type="text" id="newHKID" name="address" required readonly>
+                </div>
+                <div>
+                  <label for="fullName">English Name:</label>
+                  <input type="text" id="newEnglishName" name="fullName" required readonly>
+                </div>
+                <div>
+                  <label for="email">Chinese Name:</label>
+                  <input type="text" id="newChineseName" name="email" required readonly>
+                </div>
+                <div>
+                  <label for="phone">Gender:</label>
+                  <input type="text" id="newGender" name="phone"required readonly>
+                </div>
+                <div>
+                  <label for="address">Date of Birth:</label>
+                  <input type="text" id="newDOB" name="address" required readonly>
+                </div>
+              </fieldset>
+            </form></p> 
+
+            <label for="language">Employer preferred language:</label>
+    <select id="language" name="language">
+      <option value="english">English</option>
+      <option value="chinese">Chinese</option>
+      <!-- Add more language options as needed -->
+    </select>
+    <br><br> 
+           
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <button type="submit">Cancel</button>
+              <button type="submit">Save</button>
+            </div>
+            
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="well">
+            <h4>Required Information</h4>
+            <p style=" padding-right: 10px;">Job Order<span id="jobOrderStatus" class="text-bg-danger" >NOT COMPLETED</span></p>
+            <p style=" padding-right: 10px;">Address Proof<span id="addressProofStatus" class="text-bg-danger" >NOT SUBMITTED</span></p>
+          </div>
+        </div>
+     
+      </div>
+      
+    </div>
+  </div>
+</div>
+<div id="previewDialog" class="modal">
+  <div class="modal-content">
+    <span onclick="closePreview()" class="close">&times;</span>
+    <div class="preview-container">
+      <div class="image-container">
+        <img id="previewImage" src="" alt="Preview">
+      </div>
+      <div class="text-container">
+        <span>Please check if the text extract is correct.</span>
+      <div>
+        <label for="engName">English Name:</label>
+        <input type="text" id="engName" name="engName" value="CHAN WAI MAN" readonly required>
+      </div>
+      <div>
+        <label for="chineseName">Chinese Name:</label>
+        <input type="text" id="chineseName" name="chineseName" value="陳瑋文" readonly required>
+      </div>
+      <div>
+        <label for="dob">Date of Birth:</label>
+        <input type="text" id="dob" name="dob" value="01/01/1980" readonly required>
+      </div>
+      <div>
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" name="gender" value="Male" readonly required>
+      </div>
+      <div>
+        <label for="hkid">HKID Number:</label>
+        <input type="text" id="hkid" name="hkid" value="A123456(1)" readonly required>
+      </div>
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <button type="submit">Edit</button>
+          <button onclick="closePreview()">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="section2">
+  <!-- Content for the "Age" section -->
+
+</div>
+
+</body>
+</html>
+
+
+<script>
+function previewImage() {
+    var fileInput = document.getElementById('idUpload');
+    var selectedFile = fileInput.files[0];
+    var previewDialog = document.getElementById('previewDialog');
+    var previewImage = document.getElementById('previewImage');
+
+    if (selectedFile) {
+      var reader = new FileReader();
+
+      reader.onload = function(event) {
+        previewImage.src = event.target.result;
+        previewDialog.style.display = 'block';
+      };
+
+      reader.readAsDataURL(selectedFile);
+    }
+  }
+
+  function closePreview() {
+    var previewDialog = document.getElementById('previewDialog');
+    previewDialog.style.display = 'none';
+    passValues();
+  }
+
+
+  function passValues() {
+    var engNameValue = document.getElementById('engName').value;
+    var chineseNameValue = document.getElementById('chineseName').value;
+    var dobValue = document.getElementById('dob').value;
+    var genderValue = document.getElementById('gender').value;
+    var hkidValue = document.getElementById('hkid').value;
+
+    document.getElementById('newEnglishName').value = engNameValue;
+    document.getElementById('newChineseName').value = chineseNameValue;
+    document.getElementById('newGender').value = genderValue;
+    document.getElementById('newDOB').value = dobValue;
+    document.getElementById('newHKID').value = hkidValue;
+  }
+</script>
+
+
+<style>
+ /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+ .row.content {height: 550px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+        
+    /* On small screens, set height to 'auto' for the grid */
+    @media screen and (max-width: 767px) {
+      .row.content {height: auto;} 
+    }
+
+    .preview-container {
+  display: flex;
+  align-items: center;
+}
+
+.image-container {
+  flex: 1;
+}
+
+.text-container {
+  flex: 1;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.text-container > div {
+  display: flex;
+  align-items: center;
+}
+
+.text-container > span {
+  margin-bottom: 20px;
+}
+
+.text-container > div:last-child {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+
+  /* Modal styles */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .modal-content {
+    margin: 15% auto;
+    background-color: #fefefe;
+    border-radius: 5px;
+    padding: 20px;
+    position: relative;
+    max-width: 80%;
+    max-height: 80%;
+  }
+
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #ccc;
+    cursor: pointer;
+  }
+
+  /* Image preview styles */
+  #previewImage {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .text-bg-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    padding: 2px 4px;
+    border-radius: 4px;
+  }
+
+  .text-bg-primary {
+    color: #fff;
+    background-color: #007bff;
+    padding: 2px 4px;
+    border-radius: 4px;
+  }
+</style>
