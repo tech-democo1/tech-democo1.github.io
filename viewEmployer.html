@@ -53,7 +53,7 @@
       <ul class="nav nav-pills nav-stacked">
         <li><a href="home.html">Dashboard</a></li>
      <li class="active"><a href="employer.html">Employer Profile List</a></li>
-     <li ><a href="applicationList.html">Processing List</a></li>
+     <li ><a href="applicationList.html">Philippines Consulate Use</a></li>
      <li ><a href="systemSetting.html">System Setting</a></li>
       </ul><br>
     </div>
@@ -186,7 +186,7 @@
 
               <table class="table table-bordered" style="max-width: 100%;">
                 <tr><td colspan="5">Family Detail:</td></tr>
-                <tr><td>NAME (ENG)</td><td>YEAR OF BIRTH</td><td>RELATIONS</td><TD>TYPE OF IDENTITY</TD> <td>IDENTIFIED NUMBER</td></tr>
+                <tr><td>NAME (ENG)</td><td>YEAR OF BIRTH</td><td>RELATIONSHIP</td><TD>TYPE OF IDENTITY</TD> <td>IDENTIFIED NUMBER</td></tr>
                 <tr><td>CHAN 1</td><td>2000</td><td>SON</td><td>HKID</td><td>A123456</td></tr>
                 <tr><td>CHAN 2</td><td>2005</td><td>SON</td><td>HKID</td><td>A123456</td></tr>
                 <tr><td>CHAN 3</td><td>1980</td><td>SPOUSE</td><td>HKID</td><td>A123456</td></tr>
@@ -421,22 +421,79 @@
 
                 <button class="accordionPrint">Normal Set</button>
                 <div class="panelPrint">
-                  <p style=" padding-right: 10px;">Receipt<span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span> </p>
+
+                  <table>
+                    <tr>
+                      <td>Receipt</td>
+                      <td><span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>PH Branches Doc</td>
+                      <td><span id="addressProofStatus" class="text-bg-primary" > Ready</span></td>
+                      <td><button onclick="openPrintDocDialog()" type="submit">Print</button></td>
+                    </tr>
+                    <tr>
+                      <td>Helper Doc</td>
+                      <td><span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>HK Sets</td>
+                      <td><span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>ID407 Contract</td>
+                      <td><span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>Consulate Set</td>
+                      <td><span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>Start Work Set</td>
+                      <td><span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span></td>
+                      <td></td>
+                    </tr>
+                  </table>
+                  <!--<p style=" padding-right: 10px;">Receipt<span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span> </p>
                   <p style=" padding-right: 10px;">PH Branches Doc<span id="addressProofStatus" class="text-bg-primary" > Ready</span><button onclick="openPrintDocDialog()" type="submit">Print</button> </p>
                   <p style=" padding-right: 10px;">Helper Doc<span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span></p>
                   <p style=" padding-right: 10px;">HK Sets<span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span></p>
                   <p style=" padding-right: 10px;">ID407 Contract<span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span></p>
                   <p style=" padding-right: 10px;">Consulate Set<span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span></p>
-                  <p style=" padding-right: 10px;">Start Work Set<span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span></p>
+                  <p style=" padding-right: 10px;">Start Work Set<span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span></p>-->
                 </div>
 
                 <button class="accordionPrint">Additional Document</button>
                 <div class="panelPrint">
-                  <p style=" padding-right: 10px;">Go Down<span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span></p>
+                  <table>
+                    <tr>
+                      <td>Go Down</td>
+                      <td><span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span></td>
+                    </tr>
+                    <tr>
+                      <td>Change Address</td>
+                      <td><span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span></td>
+                    </tr>
+                    <tr>
+                      <td>Cancel Process</td>
+                      <td><span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span></td>
+                    </tr>
+                    <tr>
+                      <td>Refund Fees</td>
+                      <td><span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span></td>
+                    </tr>
+                  </table>
+                 <!-- <p style=" padding-right: 10px;">Go Down<span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span></p>
                 <p style=" padding-right: 10px;">Change Address<span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span></p>
                 <p style=" padding-right: 10px;">Cancel Process<span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span></p>
                 <p style=" padding-right: 10px;">Refund Fees<span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span></p>
-                </div>
+              -->  
+              </div>
           
               </div>
 
@@ -876,9 +933,9 @@
       <div class="text-container">
 
         <table class="table table-bordered table-responsive">
-          <tr><td>Uploaded Document Type</td><td>Actions</td></tr>
-          <tr><td>HKID</td><td>delete</td></tr>
-          <tr><td>ADDRESS PROOF</td><td>delete</td></tr>
+          <tr><td>Document Type</td><td>Uploaded Document</td></tr>
+          <tr><td>HKID</td><td>view / delete</td></tr>
+          <tr><td>ADDRESS PROOF</td><td>view / delete</td></tr>
         </table>
 
 
@@ -888,15 +945,31 @@
               <img src="hkid.jpg" alt="Girl in a jacket" width="240" height="160"> 
 
             </td><td colspan="5">
-              <label for="engName">English Name:</label>
-              <input type="text" id="engName" name="engName" value="" readonly required><br>
-                  <label for="engName">Chinese Name:</label>
-            <input type="text" id="engName" name="engName" value="" readonly required><br>
-              <label for="engName"> Date of birth:</label>
-              <input type="date" id="start" name="trip-start" value="2000-07-22" min="2024-01-01" max="2024-12-31" disabled /><br><label for="engName">Gender:</label>
-              <input type="text" id="engName" name="engName" value="F" readonly required><br>
-              <label for="engName">HKID number:</label>
-            <input type="text" id="engName" name="engName" value="" readonly required>
+              <table>
+                <tr>
+                  <td><label for="engName">English Name:</label></td>
+                  <td><input type="text" id="engName" name="engName" value="" readonly required></td>
+                </tr>
+                <tr>
+                  <td> <label for="engName">Chinese Name:</label></td>
+                  <td> <input type="text" id="engName" name="engName" value="" readonly required></td>
+                </tr>
+                <tr>
+                  <td><label for="engName"> Date of birth:</label></td>
+                  <td><input type="date" id="start" name="trip-start" value="2000-07-22" min="2024-01-01" max="2024-12-31" disabled /></td>
+                </tr>
+                <tr>
+                  <td><label for="engName">Gender:</label></td>
+                  <td><input type="text" id="engName" name="engName" value="F" readonly required></td>
+                </tr>
+                <tr>
+                  <td><label for="engName">HKID number:</label></td>
+                  <td><input type="text" id="engName" name="engName" value="" readonly required></td>
+                </tr>
+              </table>
+     
+              
+            
             </td>
           </tr>
 
