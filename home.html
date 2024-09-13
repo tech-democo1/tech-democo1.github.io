@@ -8,6 +8,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <style>
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
     .row.content {height: 550px}
@@ -80,7 +81,7 @@
             <form class="d-flex me-auto" role="search">
               <input class="form-control me-2" type="search" placeholder="Type in Employer's HKID / Name / Phone Number to search..." style="width: 500px;" aria-label="Search">
               <button class="btn btn-primary " style="margin-right: 5px;" type="submit">Search</button>
-              <button class="btn btn-primary " type="button" onclick="openPreviewDialog()">Quick Add Employer Profile</button>
+              <button class="btn btn-primary " type="button" onclick="openPreviewDialog()">Create Employer Profile</button>
             </form>
           </div>
         </nav>
@@ -561,252 +562,470 @@
 </div>
 
 
+<div id="previewDialog" class="modal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title createProfile" style="display: block;">Create Employer Profile</h5>
 
+        <h5 class="modal-title paymentInfo" style="display: none;">Payment Confirmation</h5>
 
-
-
-<div id="previewDialog" class="modal">
-  <div class="modal-content">
-    <span onclick="closePreview()" class="close">&times;</span>
-    <div class="preview-container">
-      <div class="row">
-        <span style="text-align: left;">Add Employer Profile </span>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="closePreview()"></button>
       </div>
-      <div class="image-container">
-        <img id="previewImage" src="" alt="">
-        
-      </div>
-      <div class="text-container">
-      <table>
-      <tr><td><div>
-        <label for="hkid">HKID Number:</label>
-        <input type="text" id="hkid" name="hkid" value="" readonly required>
-      </div></td></tr>
-      <tr>
-      <td> <div>
-        <label for="engName">English Name:</label>
-        <input type="text" id="engName" name="engName" value="" readonly required>
-      </div></td>
-        <td><div>
-          <label for="chineseName">Chinese Name:</label>
-          <input type="text" id="chineseName" name="chineseName" value="" readonly required>
-        </div></td>
-      </tr>
-      <tr>
-        <td><div>
-          <label for="dob">Date of Birth:</label>
-          <input type="text" id="dob" name="dob" value="" readonly required>
-        </div></td>
-        <td><div>
-          <label for="gender">Gender:</label>
-          <input type="text" id="gender" name="gender" value="" readonly required>
-        </div></td>
-      </tr>
-      <tr><td><label for="language">Employer preferred language:</label>
-        <select id="language" name="language">
-          <option value="english">English</option>
-          <option value="chinese">Chinese</option>
-          <!-- Add more language options as needed -->
-        </select></td></tr>
+      <div class="modal-body">
+        <div class="createProfile" style="display: block;">
+        <div class="row pt-2 mb-3">
+                  <h5 >Employer Information</h5>
+                </div>
+        <div class="row mb-2">
+              
+              <div class="col-6">
+                
+                <div class="row">
+                  <div class="form-group col-sm-6">
+                    <label class=" ">HKID</label><span style="color: red;">*</span>
+                    <input type="text" class="form-control " id="inputEmail3" value ="Z683365(5)">
+                  </div>
 
-      </table>
-      <br>
-      <div class="drop-container" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event)">
-        <p>Drag and drop Employer's HKID here</p>
-      </div>
-      <br>
-      <table>
-        <tr><td><label for="language">Worker Type:</label>
-          <select id="language" name="language">
-            <option value="english">OVERSEA FIRST TIME</option>
-            <option value="chinese">OVERSEA-EXHK</option>
-            <option value="chinese">FINISH CONTRACT</option>
-            <option value="chinese">RENEW</option>
+                </div>
+                <div class="row">
+                  <div class="form-group col-sm-6">
+                    <label class=" ">English Name</label><span style="color: red;">*</span>
+                    <input type="text" class="form-control" id="inputPassword3" value="Lok, Wing Ching">
+                  </div>
+
+                  <div class="form-group col-sm-6">
+                    <label class=" ">Chinese Name</label><span style="color: red;">*</span>
+                    <input type="text" class="form-control" id="inputPassword3" value="Lok, Wing Ching">
+                  </div>
+
+                </div>
+                <div class="row">
+                  <div class="form-group col-sm-6">
+                    <label class=" ">Date of Birth</label>
+                    <input type="date" class="form-control" id="inputPassword3" value="03-06-1985">
+                  </div>
+
+                  <div class="form-group col-sm-6">
+                    <div class="row">
+                    <label for="inputPassword3" class="col-sm-2 col-form-label">Gender</label></div>
+                    <div class="row">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" >
+                        <label class="form-check-label" for="gridRadios1">
+                          Female
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                        <label class="form-check-label" for="gridRadios2">
+                          Male
+                        </label>
+                      </div>
+                      </div>
+                  </div>
+                    
+                </div>
+
+               
+              
+              </div>
+
+              <div class="col-6" >
+                <div class="row">
+                <div class="drop-container" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event)">
+                  <button id="dragHkidBtn" style="display:block;" onclick="dragHkid()">drag</button>
+                  <p id="dragIdtext" style="display:block;">Drag and drop Employer's HKID here</p>
+
+
+                  <img id="hkidImg" src="hkid.jpg" alt="Girl in a jacket" width="300" height="180" style="display:none;"> 
+                </div>
+              </div>
+            </div>
+
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-6">
+            <label class=" ">Mobile Phone</label><span style="color: red;">*</span>
+            <input type="phone" class="form-control" id="inputPassword3">
+        </div>
+        <div class="col-6">
+          <label class=" ">Email Address</label>
+          <input type="email" class="form-control" id="inputPassword3">
+        </div>
+        </div>
+        <div style="display: none;">
+          <div class="row mb-3">
+                <div class="col-6">
+                  <label class=" ">Nationality</label>
+                  <input type="text" class="form-control" id="inputPassword3">
+              </div>
+                <div class="col-6">
+                  <label class=" ">Occupation</label>
+                  <input type="text" class="form-control" id="inputPassword3">
+                </div>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-6">
+          <label for="language">Preferred language:</label><span style="color: red;">*  </span><span><i class="bi bi-info-circle-fill" data-toggle="tooltip" data-placement="top" title="Language for the receipt"></i></span>
+          <select  class="form-select" id="language" name="language">
+
+            <option value="na" selected>-- Please Select --</option>
+            <option value="english" >English</option>
+            <option value="chinese">Chinese</option>
             <!-- Add more language options as needed -->
-          </select></td>
-        <td>
-          <label for="language">Price:</label>
-          <select id="language" name="language">
+          </select>
+        </div>
+        </div>
+
+        <hr class="bg-drak border-2 border-top border-dark mb-3" />
+
+        <div class="row pt-2 mb-3">
+        <h5 >Application Information</h5>
+      </div>
+      
+      <div class="row mb-3">
+       <div class="col-6">
+        <label for="language">Worker Type:</label><span style="color: red;">*</span>
+        <select id="workerTypeSelect" class="form-select" name="language" onchange="hideJobOrder()">
+
+          <option value="na" selected>-- Please Select --</option>
+          <option value="oversea" selected>OVERSEA FIRST TIME</option>
+          <option value="exhk">OVERSEA-EXHK</option>
+          <option value="finish">FINISH CONTRACT</option>
+          <option value="renew">RENEW</option>
+          <!-- Add more language options as needed -->
+        </select>
+
+       </div>
+
+       <div class="col-6">
+          <label for="language">Please select the reason for Employment:</label><span style="color: red;">*</span>
+            <select id="employReasonSelect" class="form-select" name="language" onchange="hideJobOrder()">
+
+              <option value="na" selected>-- Please Select --</option>
+              <option value="first">First Time Employment</option>
+              <option value="renew">Renew</option>
+              <option value="replace">Replace</option>
+              <option value="addition">Additional</option>
+              <!-- Add more language options as needed -->
+            </select>
+          </div>
+      </div>
+
+  <div class="row mb-3">
+       
+      </div>
+  <div class="row mb-3">
+       <div class="col-6">
+
+ <label for="language">Payment Amount:</label><span style="color: red;">*</span>
+<div class="row mb-3">
+        <div class="col-6">
+          <select id="language" class="form-select" name="language">
+            <option value="na" selected>-- Please Select --</option>
             <option value="english">Normal</option>
             <option value="chinese">Discount</option>
             <!-- Add more language options as needed -->
           </select>
-          <input type="text" id="dob" name="dob" value="1000" readonly required>
-        </div></td>
-        </td>
-        </tr>
-        <tr>
-          <td><label for="language">Please select the reason for Employment:</label>
-            <select id="language" name="language">
-              <option value="english">First Time Employment</option>
-              <option value="chinese">Renew</option>
-              <option value="chinese">Replace</option>
-              <option value="chinese">Additional</option>
-              <!-- Add more language options as needed -->
-            </select></td>
-          </tr>
-
-      </table>
-      <br>
-      <div class="row">
-        <span>Fill the job order now</span>
-      <label class="toggle">
-        <input type="checkbox" onclick="toggleTable()" id="toggleSwitch">
-        <span class="slider"></span>
-    </label>
+        </div>
+          <div class="col-6">
+          <input type="text" id="dob" name="dob" value="1000" readonly required></div>
+        </div>
 </div>
 
+    <div class="col-6">
+      <label for="language">Payment Method:</label><span style="color: red;">*</span>
+      <select id="language" class="form-select" name="language">
+        <option value="na" selected>-- Please Select --</option>
+        <option value="1">FPS</option>
+        <option value="2">Bank Transfer</option>
+        <option value="3">Cash</option>
+        <option value="4">EPS</option>
+        <option value="5">Cq.</option>
+        <option value="6">Credit Card</option>
+        <!-- Add more language options as needed -->
+      </select>
+
+    </div>
 
 
 
-<table id="joborder" style="display: none; width: 500px;" class="table table-bordered">
-        <tbody>
-          <tr>
-            <td>CODE:</td>
-            <td><input type="text" id="gender" name="gender" value="" readonly required></td>
-          </tr>
-          <tr>
-            <td>NAME OF APPLICANT:</td>
-            <td ><input type="text" id="gender" name="gender" value="" readonly required></td>
-          </tr>
-          <tr>
-            <td>SALARY:</td>
-            <td><input type="text" id="gender" name="gender" value="" readonly required></td>
-            <td>EXPECTED COMMENCEMENT DATE:</td>
-            <td><input type="date" id="start" name="trip-start" value="2024-07-22" min="2024-01-01" max="2024-12-31" /></td>
-          </tr>
-          <tr>
-            <td>REST DAY:</td>
-            <td ><input type="text" id="gender" name="gender" value="WEEKDAY" readonly required></td>
-          </tr>
-          <tr>
-            <td>NAME OF EMPLOYER:</td>
-            <td><input type="text" id="gender" name="gender" value="" readonly required></td>
-          </tr>
-          <tr>
-            <td>NO. OF ADULTS:</td>
-            <td><input type="number" id="quantity" name="quantity" min="1" max="5"></td>
-            <td>NO. OF ELDERLY AND AGE:</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>HEALTH CONDITION OF ELDERLY:</td>
-            <td ></td>
-          </tr>
-          <tr>
-            <td>NO. OF CHILDREN:</td>
-            <td><input type="number" id="quantity" name="quantity" min="1" max="5"></td>
-            <td>AGES:</td>
-            <td><input type="number" id="quantity" name="quantity" min="1" max="99"></td>
-          </tr>
-          <tr>
-            <td>EXPECTING BABY:</td>
-            <td>
-              <select id="language" name="language">
-                <option value="english">Yes</option>
-                <option value="chinese">No</option>
-                <!-- Add more language options as needed -->
-              </select></td>
-            <td>DATE OF DELIVERY:</td>
-            <td><input type="date" id="start" name="trip-start" value="2024-07-22" min="2024-01-01" max="2024-12-31" /></td>
-          </tr>
-          <tr>
-            <td>TYPE OF RESIDENCE:</td>
-            <td> <select id="language" name="language">
-              <option value="english">House</option>
-              <option value="chinese">Flat</option>
-              <!-- Add more language options as needed -->
-            </select></td>
-            <td>SIZE:</td>
-            <td><input type="text" id="gender" name="gender" value="" readonly required></td>
-          </tr>
-          <tr>
-            <td>NO. OF BEDROOM:</td>
-            <td><input type="number" id="quantity" name="quantity" min="1" max="10"></td>
-          </tr>
-          <tr>
-            <td>HELPER SLEEPING ARRANGEMENT:</td>
-            <td><select id="language" name="language">
-              <option value="english">Own Room</option>
-              <option value="chinese">Share Room</option>
-              <!-- Add more language options as needed -->
-            </select></td>
-          </tr>
-          <tr>
-            <td >MAIN DUTIES:</td>
-          </tr>
-          <tr>
-            <td>BABYSITTING:</td>
-            <td><select id="language" name="language">
-              <option value="english">Yes</option>
-              <option value="chinese">No</option>
-              <!-- Add more language options as needed -->
-            </select></td>
-            <td>TAKE CARE OF CHILDREN:</td>
-            <td><select id="language" name="language">
-              <option value="english">Yes</option>
-              <option value="chinese">No</option>
-              <!-- Add more language options as needed -->
-            </select></td>
-          </tr>
-          <tr>
-            <td>COOKING:</td>
-            <td><select id="language" name="language">
-              <option value="english">Yes</option>
-              <option value="chinese">No</option>
-              <!-- Add more language options as needed -->
-            </select></td>
-            <td>CLEANING:</td>
-            <td><select id="language" name="language">
-              <option value="english">Yes</option>
-              <option value="chinese">No</option>
-              <!-- Add more language options as needed -->
-            </select></td>
-          </tr>
-          <tr>
-            <td>WASHING:</td>
-            <td><select id="language" name="language">
-              <option value="english">Yes</option>
-              <option value="chinese">No</option>
-              <!-- Add more language options as needed -->
-            </select></td>
-            <td>IRONING:</td>
-            <td><select id="language" name="language">
-              <option value="english">Yes</option>
-              <option value="chinese">No</option>
-              <!-- Add more language options as needed -->
-            </select></td>
-          </tr>
-          <tr>
-            <td>LAUNDRY:</td>
-            <td><select id="language" name="language">
-              <option value="english">Yes</option>
-              <option value="chinese">No</option>
-              <!-- Add more language options as needed -->
-            </select></td>
-            <td>MARKETING:</td>
-            <td><select id="language" name="language">
-              <option value="english">Yes</option>
-              <option value="chinese">No</option>
-              <!-- Add more language options as needed -->
-            </select></td>
-          </tr>
-          <tr>
-            <td>GARDENING:</td>
-            <td><select id="language" name="language">
-              <option value="english">Yes</option>
-              <option value="chinese">No</option>
-              <!-- Add more language options as needed -->
-            </select></td>
-            <td>OTHERS:</td>
-            <td><input type="text" id="gender" name="gender" value="" readonly required></td>
-          </tr>
-          <tr>
-            <td>REMARKS:</td>
-            <td ><input type="text" id="gender" name="gender" value="" readonly required></td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="row">
+       
+          
+  <div id="accordion" style="display: block;">
+          <div class="card col">
+            <div class="card-header" id="headingThree">
+              <h5 class="mb-0">
+                <button onclick="openjoborder()" class="btn collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Job Order
+                </button>
+              </h5>
+            </div>
+            <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordion">
+              <div class="card-body">
+                <table id="joborder"  class="table table-bordered">
+                  <tbody>
+                    <tr><td colspan="4"><div class="drop-container" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event)">
+                      <p >Drag and drop Applicant's CV here<span style="color: red;">*</span></p>
+                    </div></td></tr>
+
+                    <tr>
+                      <td>NAME OF EMPLOYER:</td>
+                      <td><input type="text" id="gender" name="gender" value="Lok, Wing Ching" readonly required></td>
+                    </tr>
+                    <tr>
+                      <td>CODE:</td>
+                      <td><input type="text" id="gender" name="gender" value="" readonly required></td>
+                      <td>EXPECTED COMMENCEMENT DATE:</td>
+                      <td><input type="date" id="start" name="trip-start" min="2024-09-14" max="2025-12-31" /></td>
+
+                    
+                    </tr>
+                    <tr>
+                      <td>NAME OF APPLICANT:<span style="color: red;">*</span></td>
+                      <td ><input type="text" id="gender" name="gender" value="" readonly required></td>
+                      
+                      <td>REST DAY:</td>
+                      <td ><input type="text" id="gender" name="gender" value="WEEKDAY" readonly required></td>
+                    </tr>
+                    <tr>
+                      <td>SALARY:</td>
+                      <td><input type="text" id="gender" name="gender" value="" readonly required></td>
+                      <td>ALLOWANCE:</td>
+                      <td ><input type="text" id="gender" name="gender"  readonly required></td>
+                    </tr>
+                    <tr>
+                      <td>NO. OF ADULTS:</td>
+                      <td><input type="number" id="quantity" name="quantity" min="1" max="5"></td>
+                      <td>NO. OF ELDERLY AND AGE:</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>HEALTH CONDITION OF ELDERLY:</td>
+                      <td ></td>
+                    </tr>
+                    <tr>
+                      <td>NO. OF CHILDREN:</td>
+                      <td><input type="number" id="childQuantity" name="childQuantity" min="0" max="5" onchange="showChildAgeFields()"></td>
+                      <td id="ageFieldsLabel" style="display: none;">AGES:</td>
+                      <td id="ageFields" style="display: none;"></td>
+                    </tr>
+                    <tr>
+                      <td>EXPECTING BABY:</td>
+                      <td>
+                        <select id="language" name="language">
+                          <option value="na" selected>-- Please Select --</option>
+                          <option value="english">Yes</option>
+                          <option value="chinese">No</option>
+                          <!-- Add more language options as needed -->
+                        </select></td>
+                      <td>DATE OF DELIVERY:</td>
+                      <td><input type="date" id="start" name="trip-start" value="2024-07" min="2024-01-01" max="2024-12-31" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>TYPE OF RESIDENCE:</td>
+                      <td> <select id="language" name="language">
+                        <option value="na" selected>-- Please Select --</option>
+                        <option value="english">House</option>
+                        <option value="chinese">Flat</option>
+                        <!-- Add more language options as needed -->
+                      </select></td>
+                      <td>SIZE:</td>
+                      <td><input type="text" id="gender" name="gender" value="" readonly required></td>
+                    </tr>
+                    <tr>
+                      <td>NO. OF BEDROOM:</td>
+                      <td><input type="number" id="quantity" name="quantity" min="1" max="10"></td>
+                    </tr>
+                    <tr>
+                      <td>HELPER SLEEPING ARRANGEMENT:</td>
+                      <td colspan="3">
+                        <div class="row">
+                          <div class="col-4">
+                        <select id="helperSleepingArr" name="language" onchange="toggleTextField()">
+                        <option value="na" selected>-- Please Select --</option>
+                        <option value="ownRoom" >Own Room</option>
+                        <option value="shareRoom">Share Room</option>
+                        <!-- Add more language options as needed -->
+                      </select>
+                    </div>
+                    <div class="col-2" id="helperSleepingArrOwnFt" style="display: none;"><input class="pl-1" type="text"  name="gender" value=""  required> FEETS</div>
+                  <div class="col-8"  id="helperSleepingArrShareDiv" style="display: none;">
+                    <select id="helperSleepingArrShareSelect" name="language" onchange="toggleTextField()" style="width:120px">
+                      <option value="na" selected>-- Please Select --</option>
+                      <option value="share" >Share</option>
+                      <option value="separate">Separate</option>
+                      <option value="other">Other</option>
+                      <!-- Add more language options as needed -->
+                    </select>
+                    <div id="shareOptionText" style="display: none;">
+                      Share a room with <input type="number" id="quantity" name="quantity" min="1" max="5"> child/children aged 
+                      <input style="width:60px" type="text" id="childAge" name="childAge" value="" readonly required>
+                  </div>
+              
+                  <div id="separateOptionText" style="display: none;">
+                      Separate partitioned area of <input style="width:60px" type="text" id="partitionArea" name="partitionArea" value="" readonly required> square feet/square meters
+                  </div>
+              
+                  <div id="otherOptionText" style="display: none;">
+                      Please describe <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
+                  </div>
+
+
+                </div>
+                  </td>
+                    </tr>
+                    <tr>
+                      <td >MAIN DUTIES:</td>
+                    </tr>
+                    <tr>
+                      <td>BABYSITTING:</td>
+                      <td><select id="language" name="language">
+                        <option value="english">Yes</option>
+                        <option value="chinese">No</option>
+                        <!-- Add more language options as needed -->
+                      </select></td>
+                      <td>TAKE CARE OF CHILDREN:</td>
+                      <td><select id="language" name="language">
+                        <option value="english">Yes</option>
+                        <option value="chinese">No</option>
+                        <!-- Add more language options as needed -->
+                      </select></td>
+                    </tr>
+                    <tr>
+                      <td>COOKING:</td>
+                      <td><select id="language" name="language">
+                        <option value="english">Yes</option>
+                        <option value="chinese">No</option>
+                        <!-- Add more language options as needed -->
+                      </select></td>
+                      <td>CLEANING:</td>
+                      <td><select id="language" name="language">
+                        <option value="english">Yes</option>
+                        <option value="chinese">No</option>
+                        <!-- Add more language options as needed -->
+                      </select></td>
+                    </tr>
+                    <tr>
+                      <td>WASHING:</td>
+                      <td><select id="language" name="language">
+                        <option value="english">Yes</option>
+                        <option value="chinese">No</option>
+                        <!-- Add more language options as needed -->
+                      </select></td>
+                      <td>IRONING:</td>
+                      <td><select id="language" name="language">
+                        <option value="english">Yes</option>
+                        <option value="chinese">No</option>
+                        <!-- Add more language options as needed -->
+                      </select></td>
+                    </tr>
+                    <tr>
+                      <td>LAUNDRY:</td>
+                      <td><select id="language" name="language">
+                        <option value="english">Yes</option>
+                        <option value="chinese">No</option>
+                        <!-- Add more language options as needed -->
+                      </select></td>
+                      <td>MARKETING:</td>
+                      <td><select id="language" name="language">
+                        <option value="english">Yes</option>
+                        <option value="chinese">No</option>
+                        <!-- Add more language options as needed -->
+                      </select></td>
+                    </tr>
+                    <tr>
+                      <td>GARDENING:</td>
+                      <td><select id="language" name="language">
+                        <option value="english">Yes</option>
+                        <option value="chinese">No</option>
+                        <!-- Add more language options as needed -->
+                      </select></td>
+                      <td>OTHERS:</td>
+                      <td><input type="text" id="gender" name="gender" value="" readonly required></td>
+                    </tr>
+                    <tr>
+                      <td>REMARKS:</td>
+                      <td colspan="3"><div class="form-group">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+      </div>
+
+    </div>
+      
+ </div>
+       
+     
+</div>
+
+<div class="paymentInfo" style="display: none;">
+
+  <div class="row pt-2 mb-3">
+    <div class="col-2">
+    <h5>Receipt</h5>
+  </div>
+    <div class="col d-flex justify-content-end">
+        <button type="button" class="btn btn-success me-2"><i class="bi bi-whatsapp me-2"></i> Share via WhatsApp</button>
+        <button type="button" class="btn btn-success me-2"><i class="bi bi-envelope-at-fill me-2"></i>Share via Email</button>
+        <button type="button" class="btn btn-success"><i class="bi bi-file-earmark-arrow-down me-2"></i>Download</button>
+    </div>
+</div>
+      <div class="row">
+  
+          <div class="col">
+                <table  class="table table-bordered">
+                  <tr>
+                    <td>Payment Date: 01/01/2024</td>
+                    <td>Payment Method: FPS</td>
+                    <td>Payment Amount: HK$10000</td>
+                  </tr>
+<tr>
+  <td>Employer Name: Lok, Wing Ching</td>
+  <td>Employer HKID: A123456</td>
+
+</tr>
+<tr>
+  <td>Code: h123</td>
+  <td>Applicant Name: Mary</td>
+  <td>Nationality: Philippines</td>
+</tr>
+                  <tr>
+                      <td colspan="3" class=" p-2"><button type="button" class="btn btn-success me-2"><i class="bi bi-printer-fill  me-2"></i>Print</button></td>
+                      
+                  </tr>
+                </table>
+
+          </div>
+
+      </div>
+  </div>
+</div>
+
+<hr class="bg-drak border-2 border-top border-dark mb-3" />
+      <div class=" d-flex justify-content-between" style="width:100%">
+        <button type="button" class="btn btn-secondary" onclick="closePreview()">Close</button>
+        <div>
+            <button type="button" class="btn btn-primary" id="showAlertBtn">Save</button>
+            <button type="button" class="btn btn-primary" id="goToProfile" style="display:none">Go To Profile</button>
+        </div>
+    </div>
+    </div>
+  </div>
+</div>
+
       
       
     
@@ -818,6 +1037,12 @@
     </div>
   </div>
 </div>
+<div class="container mt-4">
+  <div class="alert alert-success mt-3 alert-top-right" role="alert" id="alertMessage" style="display: none;">
+      Employer Lok, Wing Ching's Profile is created sucessful!
+  </div>
+</div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
@@ -825,6 +1050,86 @@
 
 
 <script>
+  toggleTextField();
+
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
+  function hideJobOrder(){
+
+  var workerTypeSelect = document.getElementById("workerTypeSelect");
+  var employReasonSelect = document.getElementById("employReasonSelect");
+  var accordion = document.getElementById("accordion");
+  
+
+if(workerTypeSelect.value==="renew"){
+  accordion.style.display='none';
+employReasonSelect.value='renew';
+}else if(workerTypeSelect.value==="finish"){
+  accordion.style.display='none';
+}
+
+else if (workerTypeSelect.value==="oversea"||workerTypeSelect.finish==="exhk"){
+  accordion.style.display='block';
+}
+
+if(employReasonSelect.value==="renew"){
+  accordion.style.display='none';
+  //workerTypeSelect.value='renew';
+
+}else if (employReasonSelect.value==="replace"||employReasonSelect.finish==="addition"||employReasonSelect.finish==="first"){
+  accordion.style.display='block';
+}
+
+
+  }
+
+  function dragHkid(){
+
+    dragIdtext.style.display = 'none';
+    hkidImg.style.display = 'block';
+    dragHkidBtn.style.display = 'none';
+
+  }
+
+  document.getElementById('goToProfile').addEventListener('click', function() {
+
+    window.location.href = "viewEmployer.html";
+});
+
+  document.getElementById('showAlertBtn').addEventListener('click', function() {
+    const alertMessage = document.getElementById('alertMessage');
+     
+    alertMessage.style.display = 'block';
+    const showAlertBtn = document.getElementById('showAlertBtn');
+    const goToProfileBtn = document.getElementById('goToProfile');
+    showAlertBtn.style.display = 'none';
+    goToProfileBtn.style.display = 'block';
+
+    viewPaymentInfo();
+    //const collapseThree = document.getElementById('collapseThree');
+    //collapseThree.classList.remove("show");
+    //collapseThree.classList.add("in");
+
+setTimeout(function() {
+    alertMessage.style.display = 'none';
+}, 10000); // Hides the alert after 20 seconds (20000 milliseconds)
+});
+
+
+function viewPaymentInfo(){
+  const paymentInfoElements = document.getElementsByClassName('paymentInfo');
+        for (let i = 0; i < paymentInfoElements.length; i++) {
+            paymentInfoElements[i].style.display = 'block';
+        }
+
+        const createProfileElements = document.getElementsByClassName('createProfile');
+        for (let i = 0; i < createProfileElements.length; i++) {
+            createProfileElements[i].style.display = 'none';
+        }
+}
+
   function redirectToCreate() {
     window.location.href = "addEmployer";
   }
@@ -837,16 +1142,25 @@
       document.getElementById("previewDialog").style.display = "none";
     }
 
+    function openjoborder() {
+    var table = document.getElementById("joborder");
+    if (table.style.display === "none" || table.style.display === "") {
+        table.style.display = "table";
+    } else {
+        table.style.display = "none";
+    }
+}
+
 
     function toggleTable() {
-            var table = document.getElementById("joborder");
-            var toggleSwitch = document.getElementById("toggleSwitch");
+          //  var table = document.getElementById("joborder");
+          //  var toggleSwitch = document.getElementById("toggleSwitch");
             
-            if (toggleSwitch.checked) {
-                table.style.display = "table";
-            } else {
+           // if (toggleSwitch.checked) {
+           //     table.style.display = "table";
+           // } else {
                 table.style.display = "none";
-            }
+         //   }
         }
 
         openCity(event, 'Paris');
@@ -869,9 +1183,96 @@
       document.getElementById(cityName).style.display = 'block';
       event.currentTarget.classList.add('active');
     }
+function resetTextField(){
+
+  var selectElement = document.getElementById("helperSleepingArr");
+  var shareSelectElement = document.getElementById("helperSleepingArrShareSelect");
+  selectElement.value="na";
+  shareSelectElement.value="na";
+}
+
+    function toggleTextField() {
+  var selectElement = document.getElementById("helperSleepingArr");
+  var shareSelectElement = document.getElementById("helperSleepingArrShareSelect");
+
+  var textField = document.getElementById("helperSleepingArrOwnFt");
+  var shareTextField = document.getElementById("helperSleepingArrShareDiv");
+  var shareOptionText = document.getElementById("shareOptionText");
+  var separateOptionText = document.getElementById("separateOptionText");
+  var otherOptionText = document.getElementById("otherOptionText");
+  
+
+  
+  if (selectElement.value === "shareRoom") {
+    textField.style.display = "none";
+    shareTextField.style.display = "block";
+    
+    shareOptionText.style.display = "none";
+    separateOptionText.style.display = "none";
+    otherOptionText.style.display = "none";
+
+
+    if (shareSelectElement.value === "share") {
+        shareOptionText.style.display = "block";
+    } else if (shareSelectElement.value === "separate") {
+        separateOptionText.style.display = "block";
+    } else if (shareSelectElement.value === "other") {
+        otherOptionText.style.display = "block";
+    }
+
+  } else if (selectElement.value === "ownRoom"){
+    textField.style.display = "block";
+    shareTextField.style.display = "none";
+
+  } else if(selectElement.value === "ownRoom"){
+
+    textField.style.display = "none";
+    shareTextField.style.display = "none";
+  }
+
+}
+
+
+
+function showChildAgeFields() {
+    const childQuantity = document.getElementById('childQuantity').value;
+    const ageFieldsLabel = document.getElementById('ageFieldsLabel');
+    const ageFields = document.getElementById('ageFields');
+
+    // Clear previous input fields
+    ageFields.innerHTML = '';
+
+    if (childQuantity > 0) {
+        ageFieldsLabel.style.display = 'table-cell';
+        ageFields.style.display = 'table-cell';
+
+        for (let i = 1; i <= childQuantity; i++) {
+            const inputField = document.createElement('input');
+            inputField.type = 'number';
+            inputField.name = 'childAge' + i;
+            inputField.placeholder = 'Child ' + i + ' Age';
+            inputField.min = 1;
+            inputField.max = 18;
+
+            ageFields.appendChild(inputField);
+        }
+    } else {
+        ageFieldsLabel.style.display = 'none';
+        ageFields.style.display = 'none';
+    }
+}
+
 
 </script>
 <style>
+.alert-top-right {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 9999; /* Ensure the alert appears on top of other content */
+    }
+
+
   /* CSS styles for the dialog */
   .modal {
     display: none;
