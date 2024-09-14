@@ -586,20 +586,24 @@
                     <label class=" ">HKID</label><span style="color: red;">*</span>
                     <input type="text" class="form-control " id="inputEmail3" value ="Z683365(5)">
                   </div>
-
-                </div>
-                <div class="row">
-                  <div class="form-group col-sm-6">
-                    <label class=" ">English Name</label><span style="color: red;">*</span>
-                    <input type="text" class="form-control" id="inputPassword3" value="Lok, Wing Ching">
-                  </div>
-
                   <div class="form-group col-sm-6">
                     <label class=" ">Chinese Name</label><span style="color: red;">*</span>
-                    <input type="text" class="form-control" id="inputPassword3" value="Lok, Wing Ching">
+                    <input type="text" class="form-control" id="inputPassword3" value="">
                   </div>
-
                 </div>
+
+                <div class="row"> 
+                  <div class="form-group col-6">
+                      <label class=" ">English Surname</label><span style="color: red;">*</span>
+                      <input type="text" class="form-control" id="inputPassword3" value="" placeholder="Surname">
+                  </div>
+                      <div class="form-group col-6">
+
+                    <label class=" ">English Given Names</label><span style="color: red;">*</span>
+                      <input type="text" class="form-control col-sm-6" id="inputPassword3" value="Wing Ching" placeholder="Given Names">
+                    </div>
+                </div>
+
                 <div class="row">
                   <div class="form-group col-sm-6">
                     <label class=" ">Date of Birth</label>
@@ -638,7 +642,7 @@
                   <p id="dragIdtext" style="display:block;">Drag and drop Employer's HKID here</p>
 
 
-                  <img id="hkidImg" src="hkid.jpg" alt="Girl in a jacket" width="300" height="180" style="display:none;"> 
+                  <img id="hkidImg" src="hkid.jpg" alt="Girl in a jacket" width="100%" height="180" style="display:none;"> 
                 </div>
               </div>
             </div>
@@ -693,7 +697,7 @@
         <select id="workerTypeSelect" class="form-select" name="language" onchange="hideJobOrder()">
 
           <option value="na" selected>-- Please Select --</option>
-          <option value="oversea" selected>OVERSEA FIRST TIME</option>
+          <option value="oversea" >OVERSEA FIRST TIME</option>
           <option value="exhk">OVERSEA-EXHK</option>
           <option value="finish">FINISH CONTRACT</option>
           <option value="renew">RENEW</option>
@@ -715,6 +719,31 @@
             </select>
           </div>
       </div>
+
+      <div class="row mb-3">
+        <div class="col-6">
+         <label for="language">Any replacement Helper still working now or leaved already?</label><span style="color: red;">*</span>
+         <select id="workerTypeSelect" class="form-select" name="language" onchange="hideJobOrder()">
+ 
+           <option value="na" selected>-- Please Select --</option>
+           <option value="oversea" >Yes</option>
+           <option value="exhk">No</option>
+           <!-- Add more language options as needed -->
+         </select>
+ 
+        </div>
+ 
+        <div class="col-6">
+           <label for="language">Any additional Helper still working now or leaved already?</label><span style="color: red;">*</span>
+             <select id="employReasonSelect" class="form-select" name="language" onchange="hideJobOrder()">
+ 
+               <option value="na" selected>-- Please Select --</option>
+               <option value="first">Yes</option>
+               <option value="renew">No</option>
+               <!-- Add more language options as needed -->
+             </select>
+           </div>
+       </div>
 
   <div class="row mb-3">
        
@@ -757,7 +786,7 @@
       <div class="row">
        
           
-  <div id="accordion" style="display: block;">
+  <div id="accordion" style="display: none;">
           <div class="card col">
             <div class="card-header" id="headingThree">
               <h5 class="mb-0">
