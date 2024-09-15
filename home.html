@@ -1095,7 +1095,10 @@ employReasonSelect.value='renew';
   accordion.style.display='none';
 }
 
-else if (workerTypeSelect.value==="oversea"||workerTypeSelect.finish==="exhk"){
+else if (workerTypeSelect.value==="oversea"){
+  accordion.style.display='block';
+}
+else if(workerTypeSelect.finish==="exhk"){
   accordion.style.display='block';
 }
 
