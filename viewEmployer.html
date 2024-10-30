@@ -386,7 +386,7 @@
                               <option value="na" selected>-- Please Select --</option>
                               <option value="english">Monthly Income</option>
                               <option value="chinese">Fixed Deposit</option>
-                              <option value="english">Assessment Demand Note</option>
+                              <option value="english">Tax Note</option>
                               <!-- Add more language options as needed -->
                             </select>
                           </div>
@@ -438,7 +438,7 @@
                               <option value="na" selected>-- Please Select --</option>
                               <option value="english">Monthly Income</option>
                               <option value="chinese">Fixed Deposit</option>
-                              <option value="english">Assessment Demand Note</option>
+                              <option value="english">Tax Note</option>
                               <!-- Add more language options as needed -->
                             </select>
                           </div>
@@ -524,18 +524,28 @@
                             <label for="language">Address Proof Type</label>
                             <select id="addressProofType" class="form-select" name="language" onchange="addressProofChange()">
                               <option value="na" selected>-- Please Select --</option>
-                              <option value="own">Residence own by Employer</option>
-                              <option value="rented">Rented Residence </option>
+                              <option value="own">Residence</option>
+                              <option value="rented">Public Housing </option>
                               <!-- Add more language options as needed -->
                             </select>
                           </div>
-
-                          <div id="housingTypeDiv" class="col-3" style="display: none;">
-                            <label for="language">Housing Type</label>
+                          <div id="residenceTypeDiv" class="col-5" style="display: none;">
+                            <label for="language">Residence Type</label>
                             <select id="housingType" class="form-select" name="language">
                               <option value="na" selected>-- Please Select --</option>
-                              <option value="english">Public</option>
-                              <option value="chinese">Private </option>
+                              <option value="english">Name under employer</option>
+                              <option value="chinese">Name with under families member  </option>
+                              <option value="chi">Name not under families member   </option>
+                              <option value="eng">Name from Landlord   </option>
+                              <!-- Add more language options as needed -->
+                            </select>
+                          </div>
+                          <div id="housingTypeDiv" class="col-3" style="display: none;">
+                            <label for="language">Public Housing Type</label>
+                            <select id="housingType" class="form-select" name="language">
+                              <option value="na" selected>-- Please Select --</option>
+                              <option value="english">Rent</option>
+                              <option value="chinese">Own Property </option>
                               <!-- Add more language options as needed -->
                             </select>
                           </div>
@@ -688,29 +698,35 @@
                     </h2>
                     <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                       <div class="accordion-body">
-
+<button  type="button" class="btn btn-primary" ><i class="bi bi-file-earmark-plus-fill me-2"></i></i>Add</button>
                         <table class="table table-bordered" style="max-width: 100%;">
-                          <tr><td colspan="3">Existing Helper Information:</td>
-                          <td><button  type="button" class="btn btn-primary" ><i class="bi bi-file-earmark-plus-fill me-2"></i></i>Add</button></td></tr>
+                      
                           <tr>
                             <td>Type</td>
                             <td>Helper Name</td>
                             <td>Employer name</td>
-                            <td>Detail</td>
+                            <td>Helper's Identity Number</td>
+                            <td>Contract End Date</td>
+                            <td>Last Working Date</td>
+                            <td>Remark</td>
                           </tr>
                           <tr>
                             <td>Replace</td>
-                            <td>Mary</td>
+                            <td>Surname: Mary<br/>Middle Name: A <br/>Given Name: B </td>
                             <td>Chan ka</td>
-                            <td><button type="button" class="btn btn-outline-info"><i class="bi bi-search me-2"></i>View</button>
-                            </td>
+                            <td>HKID: A12345 <br/> Passport: B1245</td>
+                            <td>01/01/2024</td>
+                            <td>01/12/2023</td>
+                            <td>Effective Date: One Month Later<br/>Last Visa Expire Date: 01/12/2023</td>
                           </tr>
                           <tr>
                             <td>Addition</td>
-                            <td>Susan</td>
+                            <td>Susan<br/>Middle Name: A <br/>Given Name: B </td>
                             <td>Wong ka</td>
-                            <td><button type="button" class="btn btn-outline-info" ><i class="bi bi-search me-2"></i>View</button>
-                            </td>
+                            <td>HKID: A12345 <br/> Passport: B1245</td>
+                            <td>01/01/2024</td>
+                            <td>01/12/2023</td>
+                            <td>/</td>
                           </tr>
                         </table>
                       </div>
@@ -2416,12 +2432,14 @@ openCity(event, 'Paris');
 function addressProofChange(){
   var addressProofType = document.getElementById('addressProofType');
   var housingTypeDiv = document.getElementById('housingTypeDiv');
-
+  var residenceTypeDiv = document.getElementById('residenceTypeDiv');
   if(addressProofType.value ==="own"){
     housingTypeDiv.style.display ='none';
+    residenceTypeDiv.style.display='block';
   }else if(addressProofType.value ==="rented"){
 
     housingTypeDiv.style.display ='block';
+    residenceTypeDiv.style.display='none';
   }
   
 }
