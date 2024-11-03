@@ -698,7 +698,7 @@
                     </h2>
                     <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                       <div class="accordion-body">
-<button  type="button" class="btn btn-primary" ><i class="bi bi-file-earmark-plus-fill me-2"></i></i>Add</button>
+                      <button  type="button" class="btn btn-primary" ><i class="bi bi-file-earmark-plus-fill me-2"></i></i>Add</button>
                         <table class="table table-bordered" style="max-width: 100%;">
                       
                           <tr>
@@ -733,6 +733,39 @@
                     </div>
                   </div>
                 
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Add-on Service (For One-time Calculation)
+                      </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                      <button  type="button" class="btn btn-primary" ><i class="bi bi-file-earmark-plus-fill me-2"></i></i>Add</button>
+                        <table class="table table-bordered" style="max-width: 100%;">
+                      
+                          <tr>
+                            <td>Helper Name</td>
+                            <td>Employer name</td>
+                            <td>Helper's Identity Number</td>
+                            <td>Contract End Date</td>
+                            <td>Last Visa Expire Date</td>
+                            <td>Effective Date</td>
+                            <td>Last Working Date</td>
+                          </tr>
+                          <tr>
+                            <td>Surname: Mary<br/>Middle Name: A <br/>Given Name: B </td>
+                            <td>Chan ka</td>
+                            <td>HKID: A12345 <br/> Passport: B1245</td>
+                            <td>01/01/2024</td>
+                            <td>01/12/2023</td>
+                            <td>One Month Later</td>
+                            <td>14/12/2023</td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
 
@@ -1119,42 +1152,69 @@
 
                 <button class="accordionPrint">Normal Set</button>
                 <div class="panelPrint">
-
-                  <table>
+                  <table style="margin: 5px; border-collapse: separate; border-spacing: 5px;">
                     <tr>
-                      <td>Receipt</td>
-                      <td><span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span></td>
-                      <td></td>
+                      <td style="padding: 5px;">Receipt</td>
+                      <td style="padding:5px;">
+                        <span id="jobOrderStatus" class="text-bg-primary" >Ready to print</span>
+                      </td>
+                      <td style="padding:5px;">
+                      <button type="button" class="btn btn-success me-2" ><i class="bi bi-printer-fill  me-2"></i>Print</button>
+                      </td>
                     </tr>
                     <tr>
-                      <td>PH Branches Doc</td>
-                      <td><span id="addressProofStatus" class="text-bg-primary" > Ready</span></td>
-                      <td><button onclick="openPrintDocDialog()" type="submit">Print</button></td>
+                      <td style="padding: 5px;">PH Branches Doc</td>
+                      <td style="padding: 5px;">
+                        <span id="jobOrderStatus" class="text-bg-danger" >Info Missing</span>
+                      </td>
+                      <td style="padding:5px;">
+                        <button type="button" class="btn btn-success me-2" disabled><i class="bi bi-printer-fill  me-2"></i>Print</button>
+                        </td>
                     </tr>
                     <tr>
-                      <td>Helper Doc</td>
-                      <td><span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span></td>
-                      <td></td>
+                      <td style="padding: 5px;">Helper Doc</td>
+                      <td style="padding: 5px;">
+                        <span id="jobOrderStatus" class="text-bg-danger" >Info Missing</span>
+                      </td>
+                      <td style="padding:5px;">
+                        <button type="button" class="btn btn-success me-2" disabled><i class="bi bi-printer-fill  me-2"></i>Print</button>
+                        </td>
                     </tr>
                     <tr>
-                      <td>Immigration Set</td>
-                      <td><span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span></td>
-                      <td></td>
+                      <td style="padding: 5px;">Immigration Set</td>
+                      <td style="padding: 5px;">
+                        <span id="jobOrderStatus" class="text-bg-danger" >Info Missing</span>
+                      </td>
+                      <td style="padding:5px;">
+                        <button type="button" class="btn btn-success me-2" disabled><i class="bi bi-printer-fill  me-2"></i>Print</button >
+                        </td>
                     </tr>
                     <tr>
-                      <td>ID407 Contract</td>
-                      <td><span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span></td>
-                      <td></td>
+                      <td style="padding: 5px;">ID407 Contract</td>
+                      <td style="padding: 5px;">
+                        <span id="jobOrderStatus" class="text-bg-danger" >Info Missing</span>
+                      </td>
+                      <td style="padding:5px;">
+                        <button type="button" class="btn btn-success me-2" disabled><i class="bi bi-printer-fill  me-2"></i>Print</button >
+                        </td>
                     </tr>
                     <tr>
-                      <td>Consulate Set</td>
-                      <td><span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span></td>
-                      <td></td>
+                      <td style="padding: 5px;">Consulate Set</td>
+                      <td style="padding: 5px;">
+                        <span id="jobOrderStatus" class="text-bg-danger" >Info Missing</span>
+                      </td>
+                      <td style="padding:5px;">
+                        <button type="button" class="btn btn-success me-2" disabled><i class="bi bi-printer-fill  me-2"></i>Print</button >
+                        </td>
                     </tr>
                     <tr>
-                      <td>Start Work Set</td>
-                      <td><span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span></td>
-                      <td></td>
+                      <td style="padding: 5px;">Start Work Set</td>
+                      <td style="padding: 5px;">
+                        <span id="jobOrderStatus" class="text-bg-danger" >Info Missing</span>
+                      </td>
+                      <td style="padding:5px;">
+                        <button type="button" class="btn btn-success me-2" disabled><i class="bi bi-printer-fill  me-2"></i>Print</button >
+                        </td>
                     </tr>
                   </table>
                   <!--<p style=" padding-right: 10px;">Receipt<span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span> </p>
@@ -1168,22 +1228,50 @@
 
                 <button class="accordionPrint">Additional Document</button>
                 <div class="panelPrint">
-                  <table>
+                  <table style="margin: 5px; border-collapse: separate; border-spacing: 5px;">
                     <tr>
-                      <td>Go Down</td>
-                      <td><span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span></td>
+                      <td style="padding: 5px;">Go Down</td>
+                      <td style="padding:5px;">
+                        <button type="button" class="btn btn-primary">
+                          <i class="bi bi-file-earmark-text-fill"></i> Apply
+                        </button>
+                      </td>
+                      <td style="padding:5px;">
+                      <button type="button" class="btn btn-success me-2" disabled><i class="bi bi-printer-fill  me-2"></i>Print</button>
+                      </td>
                     </tr>
                     <tr>
-                      <td>Change Address</td>
-                      <td><span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span></td>
+                      <td style="padding: 5px;">Change Address</td>
+                      <td style="padding: 5px;">
+                        <button type="button" class="btn btn-primary">
+                          <i class="bi bi-file-earmark-text-fill"></i> Apply
+                        </button>
+                      </td>
+                      <td style="padding:5px;">
+                        <button type="button" class="btn btn-success me-2" disabled><i class="bi bi-printer-fill  me-2"></i>Print</button>
+                        </td>
                     </tr>
                     <tr>
-                      <td>Cancel Process</td>
-                      <td><span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span></td>
+                      <td style="padding: 5px;">Cancel Process</td>
+                      <td style="padding: 5px;">
+                        <button type="button" class="btn btn-primary">
+                          <i class="bi bi-file-earmark-text-fill"></i> Apply
+                        </button>
+                      </td>
+                      <td style="padding:5px;">
+                        <button type="button" class="btn btn-success me-2" disabled><i class="bi bi-printer-fill  me-2"></i>Print</button>
+                        </td>
                     </tr>
                     <tr>
-                      <td>Refund Fees</td>
-                      <td><span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span></td>
+                      <td style="padding: 5px;">Refund Fees</td>
+                      <td style="padding: 5px;">
+                        <button type="button" class="btn btn-primary">
+                          <i class="bi bi-file-earmark-text-fill"></i> Apply
+                        </button>
+                      </td>
+                      <td style="padding:5px;">
+                        <button type="button" class="btn btn-success me-2" disabled><i class="bi bi-printer-fill  me-2"></i>Print</button >
+                        </td>
                     </tr>
                   </table>
                  <!-- <p style=" padding-right: 10px;">Go Down<span id="jobOrderStatus" class="text-bg-danger" >Not Ready</span></p>
@@ -1261,6 +1349,9 @@
               </div>
               <div class="well">
                 <button class="accordion1" onclick="openCalDia()">Labour Calculation</button>
+              </div>
+              <div class="well">
+                <button class="accordion1" onclick="openCalDia()">Helper History</button>
               </div>
         </div>
         
