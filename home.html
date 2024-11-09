@@ -1015,6 +1015,7 @@
             <!-- Add more language options as needed -->
           </select>
         </div>
+       
         </div>
 
         <hr class="bg-drak border-2 border-top border-dark mb-3" />
@@ -1022,7 +1023,18 @@
         <div class="row pt-2 mb-3">
         <h5 >Application Information</h5>
       </div>
-      
+      <div class="row mb-3">
+        <div class="col-6">
+          <label for="language">Worker Nationality:</label><span style="color: red;">*  </span>
+          <select  class="form-select" id="language" name="language">
+
+            <option value="na" selected>-- Please Select --</option>
+            <option value="english" >The Philippines</option>
+            <option value="chinese">Indonesia</option>
+            <!-- Add more language options as needed -->
+          </select>
+        </div>
+      </div>
       <div class="row mb-3">
        <div class="col-6">
         <label for="language">Worker Type:</label><span style="color: red;">*</span>
@@ -1030,8 +1042,8 @@
 
           <option value="na" selected>-- Please Select --</option>
           <option value="oversea" >OVERSEA FIRST TIME</option>
+          <option value="exhk">OVERSEA FINISH CONTRACT</option>
           <option value="exhk">OVERSEA TERMINATE</option>
-          <option value="exhk">OVERSEA-EXHK</option>
           <option value="finish">FINISH CONTRACT / TRANSFER</option>
           <option value="renew">RENEW</option>
           <!-- Add more language options as needed -->
