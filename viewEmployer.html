@@ -984,6 +984,14 @@
                           <label>Contract No.</label>
                           <input type="text" class="form-control" value="C343747" readonly>
                         </div>
+                        <div class="form-group col-sm-3">
+                          <label>Contract Start Date</label><span style="color: red;">*</span>
+                          <input type="date" class="form-control" readonly required>
+                         </div>
+                         <div class="form-group col-sm-3">
+                          <label>Contract End Date</label><span style="color: red;">*</span>
+                          <input type="date" class="form-control" readonly required>
+                         </div>
                       </div>
                       <div class="row">
                         <div class="col-12 mb-3">
@@ -1026,14 +1034,6 @@
                       <div class="row">
                         <div class="col-sm-3">  <strong>White Slip Visa</strong>
                          </div>
-                         <!--<div class="form-group col-sm-3">
-                          <label>Contract Start Date</label><span style="color: red;">*</span>
-                          <input type="date" class="form-control" readonly required>
-                         </div>
-                         <div class="form-group col-sm-3">
-                          <label>Contract End Date</label><span style="color: red;">*</span>
-                          <input type="date" class="form-control" readonly required>
-                         </div> -->
                          <div class="form-group col-sm-3">
                           <label>Visa Expiry Date</label><span style="color: red;">*</span>
                           <input type="date" class="form-control" readonly required>
@@ -1054,7 +1054,8 @@
                   <div id="collapseSecond02" class="accordion-collapse collapse " data-bs-parent="#HelperaccordionExample">
                     <div class="accordion-body">
                       <div class="row mb-3">
-                        </div>
+                      </div>
+
                     </div>
                   </div>
                 </div>
@@ -1172,12 +1173,53 @@
                   <div id="collapseThird0" class="accordion-collapse collapse " data-bs-parent="#HelperaccordionExample">
                     <div class="accordion-body">
                       <div class="row mb-3">
+
+
+                        <table  class="table table-bordered" style="max-width: 100%;">
+                          <tr>
+                            <td>
+                              Address of Work
+                            </td>
+                            <td>
+                              Name of Employer
+                            </td>
+                            <td>
+                              Employment Period From
+                            </td>
+                            <td>
+                              Employment Period To
+                            </td>
+                            <td>
+                              Total duration of working experience as a domestic helper
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              EX-HK
+                            </td>
+                            <td>
+                              Wong Kow
+                            </td>
+                            <td>
+                              2018-01-01
+                            </td>
+                            <td>
+                              2024-01-01
+                            </td>
+                            <td>
+                              6 years
+                            </td>
+                          </tr>
+                        </table>
+
+
+<!--
                         <div class="col-sm-3">
-                          Address of Work
+                          
                           <div class="form-group ">
                             <select id="language" name="language" class="form-select" readonly>
                               <option value="english">EX-HK</option>
-                              <!-- Add more language options as needed -->
+                               Add more language options as needed 
                             </select>
                           </div>
                         </div>
@@ -1207,10 +1249,10 @@
                           <div class="form-group ">
                             <select id="language" name="language" class="form-select" readonly>
                               <option value="english">6</option>
-                              <!-- Add more language options as needed -->
                             </select>
                           </div>
                         </div>
+                      -->
                       </div>
                     </div>
                   </div>
@@ -1474,7 +1516,7 @@
               </div>
               <div class="well">
                 <button class="accordion1" onclick="openCalDia()">Labour Calculation</button>
-                <button class="accordion1" onclick="openCalDia()">New Vocation</button>
+                <button class="accordion1" onclick="openNewVocationDialog()">New Vocation</button>
               </div>
               <div class="well">
                 <button class="accordion1" onclick="openCalDia()">Helper History</button>
@@ -1552,6 +1594,225 @@
   </div>
 </div>
 
+<div id="newVocationDialog" class="modal" tabindex="-1" >
+  <div class="modal-dialog modal-lg" >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">New Vocation</h5>
+        
+        <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="closePreview()"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row mb-3">
+          <table class="table table-bordered" >
+            <tr>
+              <td >
+               Employer Name
+              </td>
+              <td >
+                Chan Eing
+              </td>
+            </tr>
+            <tr>
+              <td>Helper Name</td>
+              <td>
+                Mary
+              </td>
+            </tr>
+            <tr>
+              <td>Contract No.</td>
+              <td>
+                A1234567890
+              </td>
+            </tr>
+            <tr>
+              <td>Date</td>
+              <td>
+                2024-01-01
+              </td>
+            </tr>
+          </table>
+        </div>
+        <hr class="bg-drak border-2 border-top border-dark mb-3" />
+        <div class="container">
+          <!-- Ticket Information -->
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th colspan="4">TICKET INFORMATION</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Departure from HK -->
+              <tr>
+                <td colspan="2">Pre use ticket: Departure from HONG KONG</td>
+                <td colspan="2"></td>
+              </tr>
+              <tr>
+                <td>Departure Date:</td>
+                <td><input type="date" class="form-control"></td>
+                <td>Ticket pay by:</td>
+                <td>
+                  <div class="input-group">
+                    <select class="form-select">
+                      <option value="" selected>-- Please Select --</option>
+                      <option value="employer">Employer advance of current contract use</option>
+                      <option value="helper">Employer end current contract use</option>
+                      <option value="agency">helper’s money</option>
+                      <option value="agency">As a gift from employer</option>
+                    </select>
+                    <span class="input-group-text">$</span>
+                    <input type="number" class="form-control">
+                  </div>
+                </td>
+              </tr>
+              
+              <!-- Departure from Philippines -->
+              <tr>
+                <td colspan="2">Pre use ticket: Departure from PHILIPPINES/INDONESIA</td>
+                <td colspan="2"></td>
+              </tr>
+              <tr>
+                <td>Departure Date:</td>
+                <td><input type="date" class="form-control"></td>
+                <td>Ticket pay by:</td>
+                <td>
+                  <div class="input-group">
+                    <select class="form-select">
+                      <option value="" selected>-- Please Select --</option>
+                      <option value="employer">Employer advance of renew new contract use</option>
+                      <option value="helper">Employer start current contract use</option>
+                      <option value="agency">helper’s money</option>
+                      <option value="agency">As a gift from employer</option>
+                    </select>
+                    <span class="input-group-text">$</span>
+                    <input type="number" class="form-control">
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        
+          <!-- Period of Vocation -->
+          <table class="table table-bordered mt-4">
+            <thead>
+              <tr>
+                <th colspan="3">PERIOD OF VOCATION IN PHILIPPINES/INDONESIA</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- No Pay Leave -->
+              <tr>
+                <td>
+                  <i class="bi bi-diamond-fill text-warning"></i> 
+                  Days for no pay leave:
+                </td>
+                <td><input type="number" class="form-control"></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Year of employment</td>
+                <td colspan="2"><input type="text" class="form-control"></td>
+              </tr>
+        
+              <!-- Advance Annual Leave -->
+              <tr>
+                <td>
+                  <i class="bi bi-diamond-fill text-warning"></i> 
+                  Days for pre use advance annual leave:
+                </td>
+                <td><input type="number" class="form-control"></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Year of employment</td>
+                <td colspan="2"><input type="text" class="form-control"></td>
+              </tr>
+        
+              <!-- Other Leave Types -->
+              <tr>
+                <td>
+                  <i class="bi bi-diamond-fill text-warning"></i> 
+                  Days for annual leave:
+                </td>
+                <td><input type="number" class="form-control"></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <i class="bi bi-diamond-fill text-warning"></i> 
+                  Days for her Regular rest day:
+                </td>
+                <td><input type="number" class="form-control"></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <i class="bi bi-diamond-fill text-warning"></i> 
+                  Days for her Statutory holiday:
+                </td>
+                <td><input type="number" class="form-control"></td>
+                <td></td>
+              </tr>
+        
+              <!-- Total -->
+              <tr class="table-secondary">
+                <td><strong>TOTAL VOCATION IN PHILIPPINES/INDONESIA</strong></td>
+                <td><input type="number" class="form-control" readonly></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        
+          <!-- Allowance -->
+          <table class="table table-bordered mt-4">
+            <tbody>
+              <tr>
+                <td>交通津貼 Travelling Allowance</td>
+                <td>
+                  <div class="input-group">
+                    <span class="input-group-text">$</span>
+                    <input type="number" class="form-control">
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="input-group">
+                    <span class="input-group-text">其他 Others</span>
+                    <input type="text" class="form-control">
+                  </div>
+                </td>
+                <td>
+                  <div class="input-group">
+                    <span class="input-group-text">$</span>
+                    <input type="number" class="form-control">
+                  </div>
+                </td>
+              </tr>
+              <tr class="table-secondary">
+                <td class="text-end"><strong>合共 Total</strong></td>
+                <td>
+                  <div class="input-group">
+                    <span class="input-group-text">$</span>
+                    <input type="number" class="form-control" readonly>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+          
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closePreview()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div id="extendVisaDialog" class="modal" tabindex="-1" >
   <div class="modal-dialog modal-lg" >
@@ -2794,6 +3055,7 @@ function openPreviewDialog() {
       document.getElementById("labourCalDia").style.display = "none";
       document.getElementById("extendVisaDialog").style.display = "none";
       document.getElementById("printDocDialog").style.display = "none";
+      document.getElementById("newVocationDialog").style.display = "none";
     }
 
     
@@ -2809,8 +3071,10 @@ function openPreviewDialog() {
       document.getElementById("extendVisaDialog").style.display = "block";
     }
 
-
-
+    function openNewVocationDialog() {
+      document.getElementById("newVocationDialog").style.display = "block";
+    }
+    
 
     var accPrint = document.getElementsByClassName("accordionPrint");
 var a;
