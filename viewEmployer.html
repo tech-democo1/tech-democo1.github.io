@@ -392,9 +392,9 @@
                                 <option>8</option>
                                 <option>9</option>
                               </select>
-                            </div>
+                      </div>
 
-                          </div>
+                    </div>
                           <div class="col-3">
                             <div class="form-group">
                               <label for="exampleFormControlSelect1">Number of minor (age between 5 to 18)</label>
@@ -409,7 +409,7 @@
                                 <option>8</option>
                                 <option>9</option>
                               </select>
-                            </div>
+                  </div>
 
                           </div>
                           <div class="col-3">
@@ -1672,7 +1672,7 @@
       </div>
       <div class="modal-body">
         <div class="row mb-3">
-          <table class="table table-bordered" >
+          <table class="table table-bordered" style="display: none;">
             <tr>
               <td >
                Employer Name
@@ -1701,7 +1701,7 @@
             </tr>
           </table>
         </div>
-        <hr class="bg-drak border-2 border-top border-dark mb-3" />
+       
         <div class="container">
           <!-- Ticket Information -->
           <table class="table table-bordered">
@@ -1967,280 +1967,310 @@
       </div>
       <div class="text-container">
 
-        <table border="1" cellpadding="5" cellspacing="0">
-   
-          <tr>
-            <td style="width: 5%;">1</td>
-              <td style="width: 50%;">EMPLOYER NAME</td>
-              <td style="width: 45%;"><input type="text" name="employer_name"></td>
-          </tr>
-          <tr>
-            <td style="width: 5%;">2</td>
-              <td style="width: 50%;">HELPER NAME</td>
-              <td style="width: 45%;"><input type="text" name="helper_name"></td>
-          </tr>
-          <tr>
-            
-              <td colspan="3"><strong>CONTRACT OF YOUR WORKING SALARY INFORMATION</strong></td>
-          </tr>
-          <tr>
-            <td style="width: 5%;">3</td>
-              <td style="width: 15%;">CONTRACT SALARY PER MONTH</td>
-              <td style="width: 80%;"><input type="number" name="contract_salary"></td>
-          </tr>
-          <tr>
-            <td style="width: 5%;">4</td>
-              <td style="width: 15%;">WHEN START WORK IN YOUR EMPLOYER HOUSE DATE</td>
-              <td style="width: 80%;"><input type="date" name="start_date"></td>
-          </tr>
-          <tr>
-            <td style="width: 5%;">5</td>
-              <td style="width: 15%;">WHEN IS YOUR LAST WORKING DATE</td>
-              <td style="width: 80%;"><input type="date" name="last_working_date"></td>
-          </tr>
-          <tr>
-            <td style="width: 5%;">6</td>
-              <td style="width: 15%;">DATE CALCULATION OF NO. OF DAYS</td>
-              <td  style="width: 80%;"id="days_calculated"># auto calculate</td>
-          </tr>
-          <tr>
-            <td style="width: 5%;">7</td>
-              <td style="width: 15%;">WHEN IS YOUR LAST TIME SALARY DATE</td>
-              <td style="width: 80%;"><input type="date" name="last_salary_date"></td>
-          </tr>
-          <tr>
-            <td style="width: 5%;">8</td>
-              <td style="width: 15%;">TOTAL AMOUNT WILL PAY FOR WORKING SALARY</td>
-              <td style="width: 80%;" id="total_salary"># $ auto calculate</td>
-          </tr>
-          <tr>
-              <td colspan="3"><strong>STATUTORY HOLIDAYS INFORMATION</strong></td>
-          </tr>
-          <tr>
-            <td style="width: 5%;">9</td>
-              <td style="width: 5%;">DO YOU HAVE ANY STATUTORY HOLIDAY NOT YET PAID OR HAVE IN PASS</td>
-              <td style="width: 5%;">
-                  <select name="statutory_holiday">
-                      <option value="yes">Yes</option>
-                      <option value="no">No</option>
+        <div class="container">
+          <table class="table table-bordered">
+            <tbody>
+              <!-- Basic Information -->
+              <tr>
+                <td>Employer name</td>
+                <td><input type="text" class="form-control"></td>
+              </tr>
+              <tr>
+                <td>Helper name</td>
+                <td><input type="text" class="form-control"></td>
+              </tr>
+        
+              <!-- Contract Salary -->
+              <tr>
+                <td colspan="2" class="table-secondary fw-bold">Contract of your working salary information</td>
+              </tr>
+              <tr>
+                <td>Contract salary per month</td>
+                <td>
+                  <select class="form-select">
+                    <option value="">Select salary</option>
+                    <option value="4630">4,630</option>
+                    <option value="5000">5,000</option>
+                    <option value="5500">5,500</option>
                   </select>
-              </td>
-          </tr>
-          <tr>
-            <td style="width: 5%;">10</td>
-              <td style="width: 5%;">NO. OF STATUTORY HOLIDAYS</td>
-              <td style="width: 5%;" id="statutory_holidays_count"># auto calculate</td>
-          </tr>
-          <tr>
-            <td style="width: 5%;">11</td>
-              <td style="width: 5%;">TOTAL AMOUNT PAY FOR STATUTORY HOLIDAY</td>
-              <td  style="width: 5%;"id="statutory_holidays_amount"># $ auto calculate</td>
-          </tr>
-          <tr>
-              <td colspan="3"><strong>ANNUAL LEAVE INFORMATION FOR THIS CONTRACT</strong></td>
-          </tr>
-          <tr>
-            <td style="width: 5%;">12</td>
-              <td style="width: 5%;">HOW MANY CONTRACT THAT YOU WORK UNDER THIS EMPLOYER?</td>
-              <td style="width: 5%;">
-                  <select name="contract_count">
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
+                </td>
+              </tr>
+              <tr>
+                <td>When start work in your employer house date</td>
+                <td><input type="date" class="form-control"></td>
+              </tr>
+              <tr>
+                <td>When is your last working date</td>
+                <td><input type="date" class="form-control"></td>
+              </tr>
+              <tr>
+                <td>Date calculation of no. of days</td>
+                <td><input type="number" class="form-control" readonly></td>
+              </tr>
+              <tr>
+                <td>When is your last time salary date</td>
+                <td><input type="date" class="form-control"></td>
+              </tr>
+              <tr>
+                <td>Total amount will pay for working salary</td>
+                <td>
+                  <div class="input-group">
+                    <span class="input-group-text">$</span>
+                    <input type="number" class="form-control" readonly>
+                  </div>
+                </td>
+              </tr>
+        
+              <!-- Statutory Holidays -->
+              <tr>
+                <td colspan="2" class="table-secondary fw-bold">Statutory holidays information</td>
+              </tr>
+              <tr>
+                <td>Do you have any statutory holiday not yet paid or have in pass</td>
+                <td>
+                  <select class="form-select" multiple>
+                    <option value="none">None</option>
+                    <option value="jan1">1st January</option>
+                    <option value="cny1">1st of CNY</option>
+                    <option value="cny2">2nd of CNY</option>
+                    <option value="cny3">3rd of CNY</option>
+                    <option value="cny4">4th of CNY</option>
+                    <option value="ching_ming">Ching Ming Festival</option>
+                    <option value="labour">Labour Day</option>
+                    <option value="tuen_ng">Tuen Ng Festival</option>
+                    <option value="july1">1st July</option>
+                    <option value="mid_autumn">Mid-Autumn</option>
+                    <option value="oct1">1st October</option>
+                    <option value="chung_yeung">Chung Yeung</option>
+                    <option value="winter">Winter Solstice</option>
+                    <option value="christmas">25th Christmas</option>
                   </select>
-              </td>
-          </tr>
-          <tr>
-            <td style="width: 5%;">13</td>
-              <td style="width: 5%;">HOW MANY MONTHS HAVE YOU WORKING IN THIS CONTRACT</td>
-              <td style="width: 5%;">
-                  <select name="months_worked">
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <!-- Add options up to 24 -->
-                      <option value="24">24</option>
+                </td>
+              </tr>
+              <tr>
+                <td>No. of statutory holidays</td>
+                <td><input type="number" class="form-control" readonly></td>
+              </tr>
+              <tr>
+                <td>Total amount pay for statutory holiday</td>
+                <td>
+                  <div class="input-group">
+                    <span class="input-group-text">$</span>
+                    <input type="number" class="form-control" readonly>
+                  </div>
+                </td>
+              </tr>
+        
+              <!-- Annual Leave -->
+              <tr>
+                <td colspan="2" class="table-secondary fw-bold">Annual leave information for this contract</td>
+              </tr>
+              <tr>
+                <td>How many contract that you work under this employer?</td>
+                <td>
+                  <select class="form-select">
+                    <option value="1">1st contract</option>
+                    <option value="2">2nd contract</option>
                   </select>
-              </td>
-          </tr>
-          <tr>
-            <td style="width: 5%;">14</td>
-              <td style="width: 5%;">HOW MANY DAYS OF YOUR ANNUAL LEAVE SUPPOSE TO HAVE</td>
-              <td style="width: 5%;" id="annual_leave_days"># AUTO calculate</td>
-          </tr>
-          <tr>
-            <td style="width: 5%;">15</td>
-              <td style="width: 5%;">DID YOU USED FOR YOU ANNUAL LEAVE HOLIDAY</td>
-              <td style="width: 5%;">
-                  <select name="used_annual_leave">
-                      <option value="0">0</option>
-                      <option value="1">1</option>
-                      <!-- Add options up to 30 -->
-                      <option value="30">30</option>
+                </td>
+              </tr>
+              <tr>
+                <td>How many months have you working in this contract</td>
+                <td><input type="number" class="form-control" readonly></td>
+              </tr>
+              <tr>
+                <td>How many days of your annual leave suppose to have</td>
+                <td><input type="number" class="form-control" readonly></td>
+              </tr>
+              <tr>
+                <td>Did you used for you annual leave holiday</td>
+                <td>
+                  <select class="form-select">
+                    <option value="">Select days</option>
+                    <!-- Options 0-30 will be generated by JS -->
                   </select>
-              </td>
-          </tr>
-          <tr>
-            <td style="width: 5%;">16</td>
-              <td style="width: 5%;">TOTAL OF NO. ANNUAL LEAVE DAYS YOU HAVE</td>
-              <td style="width: 5%;" id="total_annual_leave_days"># AUTO calculate</td>
-          </tr>
-          <tr>
-            <td style="width: 5%;">17</td>
-              <td style="width: 5%;">HOW MUCH AMOUNT OF ANNUAL LEAVE IN TOTAL YOU WILL HAVE</td>
-              <td style="width: 5%;" id="annual_leave_amount"># $ auto calculate</td>
-          </tr>
-          <tr>
-              <td colspan="3"><strong>ABOUT ONE MONTH'S SALARY IN LIEU OF ONE MONTH'S NOTICE INFORMATION</strong></td>
-          </tr>
-          <tr>
-            <td style="width: 5%;">18</td>
-              <td style="width: 5%;">DID YOU FINISH</td>
-              <td style="width: 5%;">
-                  <select name="finished">
-                      <option value="yes">Yes</option>
-                      <option value="no">No</option>
+                </td>
+              </tr>
+              <tr>
+                <td>Total of no. annual leave days you have</td>
+                <td><input type="number" class="form-control" readonly></td>
+              </tr>
+              <tr>
+                <td>How much amount of annual leave in total you will have</td>
+                <td>
+                  <div class="input-group">
+                    <span class="input-group-text">$</span>
+                    <input type="number" class="form-control" readonly>
+                  </div>
+                </td>
+              </tr>
+        
+              <!-- Notice Period -->
+              <tr>
+                <td colspan="2" class="table-secondary fw-bold">About one month's salary in lieu of one month's notice information</td>
+              </tr>
+              <tr>
+                <td>Did you finish</td>
+                <td>
+                  <select class="form-select" onchange="toggleNoticeFields()">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
                   </select>
-              </td>
-          </tr>
-          <tr>
-            <td style="width: 5%;">19</td>
-              <td style="width: 5%;">DO YOU BOTH USE ONE MONTH NOTICE TO RELEASE</td>
-              <td style="width: 5%;">
-                  <select name="one_month_notice">
-                      <option value="yes">Yes</option>
-                      <option value="no">No</option>
+                </td>
+              </tr>
+              <tr id="noticeRow1" style="display: none;">
+                <td>Do you both use one month notice to release</td>
+                <td>
+                  <select class="form-select">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
                   </select>
-              </td>
-          </tr>
-          <tr>
-            <td style="width: 5%;">20</td>
-              <td style="width: 5%;">WHICH PARTY INFORM THE IMEDIATE TERMINATION</td>
-              <td style="width: 5%;">
-                  <select name="termination_party">
-                      <option value="employer">EMPLOYER (+line5)</option>
-                      <option value="helper">HELPER (-line5)</option>
+                </td>
+              </tr>
+              <tr id="noticeRow2" style="display: none;">
+                <td>Which party inform the immediate termination</td>
+                <td>
+                  <select class="form-select">
+                    <option value="employer">Employer (+$salary)</option>
+                    <option value="helper">Helper (-$salary)</option>
                   </select>
-              </td>
-          </tr>
-          <tr>
-              <td colspan="3"><strong>TRANSPORTATION FEES</strong></td>
-          </tr>
-          <tr>
-            <td style="width: 5%;">21</td>
-              <td style="width: 5%;">WILL THE TICKET FOR CONNECTING FLIGHT BE ON THE SAME DAY</td>
-              <td style="width: 5%;">
-                  <select name="same_day_flight">
-                      <option value="yes">Yes</option>
-                      <option value="no">No</option>
+                </td>
+              </tr>
+        
+              <!-- Transportation -->
+              <tr>
+                <td colspan="2" class="table-secondary fw-bold">Transportation fees</td>
+              </tr>
+              <tr>
+                <td>Will the ticket for connecting flight be on the same day</td>
+                <td>
+                  <select class="form-select" onchange="updateTravelAllowance()">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
                   </select>
-              </td>
-          </tr>
-          <tr>
-            <td style="width: 5%;">22</td>
-              <td style="width: 5%;">TRAVEL ALLOWANCE</td>
-              <td style="width: 5%;" id="travel_allowance">auto DEFAULT $100 / $200</td>
-          </tr>
-          <tr>
-              <td colspan="3"><strong>LONG SERVICES FEES (more than 5 years up need to fill 30-33)</strong></td>
-          </tr>
-          <tr>
-            <td style="width: 5%;">23</td>
-              <td style="width: 5%;">HOW MANY CONTRACT DID YOU WORK UNDER THIS EMPLOYER?</td>
-              <td style="width: 5%;">
-                  <select name="contract_count_long_service">
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
+                </td>
+              </tr>
+              <tr>
+                <td>Travel allowance</td>
+                <td>
+                  <div class="input-group">
+                    <span class="input-group-text">$</span>
+                    <input type="number" class="form-control" readonly>
+                  </div>
+                </td>
+              </tr>
+        
+              <!-- Long Service -->
+              <tr>
+                <td colspan="2" class="table-secondary fw-bold">Long services fees (more than 5 year up need to fill)</td>
+              </tr>
+              <tr>
+                <td>How many contract did you work under this employer?</td>
+                <td>
+                  <select class="form-select">
+                    <option value="">Select contract</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
                   </select>
-              </td>
-          </tr>
-          <tr>
-            <td style="width: 5%;">24</td>
-              <td style="width: 15%;">HOW MANY OF YEARS AND MONTHS DID YOU WORK IN TOTAL before you go down</td>
-              <td style="width: 5%;">
-                  <select name="years_worked">
-                      <option value="5.1">5.1</option>
-                      <option value="5.2">5.2</option>
-                      <!-- Add more options as needed -->
+                </td>
+              </tr>
+              <tr>
+                <td>How many of years and months did you work in total</td>
+                <td>
+                  <select class="form-select">
+                    <option value="">Select duration</option>
+                    <!-- Options will be generated by JS -->
                   </select>
-              </td>
-          </tr>
-          <tr>
-            <td style="width: 5%;">25</td>
-              <td style="width: 15%;">TOTAL AMOUNT YOU WILL GET</td>
-              <td style="width: 5%;" id="long_service_amount"># $ auto calculate</td>
-          </tr>
-          <tr>
-              <td colspan="3"><strong>TICKET / CASH IN LIEU OF TO PHILIPPINES (only employer will decide it)</strong></td>
-          </tr>
-          <tr>
-            <td style="width: 5%;">26</td>
-              <td style="width: 15%;">PLEASE CONFIRM FROM EMPLOYER PREFER CASH OR TICKET</td>
-              <td style="width: 5%;">
-                  <select name="cash_or_ticket">
-                      <option value="cash">CASH</option>
-                      <option value="ticket">TICKET</option>
+                </td>
+              </tr>
+              <tr>
+                <td>Total amount you will get</td>
+                <td>
+                  <div class="input-group">
+                    <span class="input-group-text">$</span>
+                    <input type="number" class="form-control" readonly>
+                  </div>
+                </td>
+              </tr>
+        
+              <!-- Ticket/Cash -->
+              <tr>
+                <td colspan="2" class="table-secondary fw-bold">Ticket / cash in lieu of to Philippines</td>
+              </tr>
+              <tr>
+                <td>Please confirm from employer prefer cash or ticket</td>
+                <td>
+                  <select class="form-select">
+                    <option value="cash">Cash</option>
+                    <option value="ticket">Ticket</option>
                   </select>
-              </td>
-          </tr>
-          <tr>
-            <td style="width: 5%;">27</td>
-              <td style="width: 15%;">HONG KONG TO MANILA FLIGHT TICKET</td>
-              <td style="width: 5%;">MANILA</td>
-          </tr>
-          <tr>
-            <td style="width: 5%;">28</td>
-              <td style="width: 15%;">IS THERE A CONNECTION FLIGHT TICKET</td>
-              <td style="width: 5%;">
-                  <select name="connection_flight">
-                      <option value="yes">Yes</option>
-                      <option value="no">No</option>
+                </td>
+              </tr>
+              <tr>
+                <td>Hong Kong to Manila flight ticket</td>
+                <td>Manila</td>
+              </tr>
+              <tr>
+                <td>Is there a connection flight ticket</td>
+                <td>
+                  <select class="form-select" onchange="toggleProvinceField()">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
                   </select>
-              </td>
-          </tr>
-          <tr>
-            <td style="width: 5%;">29</td>
-              <td style="width: 5%;">WHERE IS THE PROVINCE OF YOUR CONNECTION FLIGHT LOCATED</td>
-              <td style="width: 5%;">
-                  <select name="connection_province">
-                      <option value="province1">Province 1</option>
-                      <option value="province2">Province 2</option>
-                      <!-- Add more provinces as needed -->
+                </td>
+              </tr>
+              <tr id="provinceRow" style="display: none;">
+                <td>Where is the province of your connection flight located</td>
+                <td>
+                  <select class="form-select">
+                    <option value="">Select province</option>
+                    <option value="davao">Davao</option>
+                    <option value="iloilo">Iloilo</option>
+                    <option value="dumaguete">Dumaguete</option>
+                    <option value="bacolod">Bacolod</option>
+                    <option value="butuan">Butuan</option>
+                    <option value="santos">Santos Genson</option>
+                    <option value="cagayan">Cagayan de Oro</option>
+                    <option value="cebu">Cebu</option>
+                    <option value="clark">Clark</option>
+                    <option value="bicol">Bicol</option>
+                    <option value="tuguegarao">Tuguegarao</option>
+                    <option value="cauayan">Cauayan</option>
                   </select>
-              </td>
-          </tr>
-          <tr>
-            <td style="width: 5%;">30</td>
-              <td style="width: 5%;">TOTAL AMOUNT FOR TICKET IN CASH</td>
-              <td style="width: 5%;">
-                  <select name="ticket_cash_amount">
-                      <option value="1000">$1000</option>
-                      <option value="1500">$1500</option>
-                      <!-- Add more options as needed -->
-                  </select>
-              </td>
-          </tr>
-          <tr>
-            <td style="width: 5%;">31</td>
-              <td style="width: 5%;">remark :</td>
-              <td style="width: 5%;"><textarea name="remark" rows="3" cols="30"></textarea></td>
-          </tr>
-          <tr>
-            <td style="width: 5%;">32</td>
-              <td style="width: 5%;">CONTRACT NO:</td>
-              <td style="width: 5%;"><input type="text" name="contract_no"></td>
-          </tr>
-          <tr>
-            <td style="width: 5%;">33</td>
-              <td style="width: 5%;">SUB TOTAL</td>
-              <td style="width: 5%;" id="sub_total"># $ auto calculate</td>
-          </tr>
-      </table>
+                </td>
+              </tr>
+              <tr>
+                <td>Total amount for ticket in cash</td>
+                <td>
+                  <div class="input-group">
+                    <span class="input-group-text">$</span>
+                    <input type="number" class="form-control">
+                  </div>
+                </td>
+              </tr>
+        
+              <!-- Contract Number and Total -->
+              <tr>
+                <td>Contract no:</td>
+                <td><input type="text" class="form-control"></td>
+              </tr>
+              <tr class="table-secondary">
+                <td class="fw-bold">Sub total</td>
+                <td>
+                  <div class="input-group">
+                    <span class="input-group-text">$</span>
+                    <input type="number" class="form-control" readonly>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
 
       <br>
       <br>
@@ -2974,6 +3004,43 @@
 
 
 <script>
+
+  // Function to toggle province field visibility
+function toggleProvinceField() {
+    const connectionFlightSelect = document.querySelector('select[onchange="toggleProvinceField()"]');
+    const provinceRow = document.getElementById('provinceRow');
+    
+    if (connectionFlightSelect.value === 'yes') {
+        provinceRow.style.display = ''; // Show the province row
+    } else {
+        provinceRow.style.display = 'none'; // Hide the province row
+        // Optionally reset the province selection
+        const provinceSelect = provinceRow.querySelector('select');
+        if (provinceSelect) {
+            provinceSelect.value = '';
+        }
+    }
+}
+
+// Function to handle travel allowance based on connection flight
+function updateTravelAllowance() {
+    const connectionFlightSelect = document.querySelector('select[onchange="updateTravelAllowance()"]');
+    const travelAllowanceInput = document.querySelector('input[readonly]'); // Get the travel allowance input
+    
+    // Set travel allowance based on connection flight selection
+    if (connectionFlightSelect.value === 'yes') {
+        travelAllowanceInput.value = '100';
+    } else {
+        travelAllowanceInput.value = '200';
+    }
+}
+
+// Initialize the fields when the page loads
+document.addEventListener('DOMContentLoaded', function() {
+    // Initial state
+    toggleProvinceField();
+    updateTravelAllowance();
+});
 openCity(event, 'Paris');
 
 
