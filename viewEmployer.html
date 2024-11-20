@@ -175,47 +175,7 @@
                
 
                 <div class="accordion" id="accordionExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseZero0" aria-expanded="false" aria-controls="collapseZero0">
-                        Contact information 
-                      </button>
-                    </h2>
-                    <div id="collapseZero0" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
-                      <div class="accordion-body">
-                        <div class="row ">
-                          <div class="form-group col-2">
-                            <label class=" ">Mobile Phone</label>
-                            <input type="phone" class="form-control " id="inputEmail3" value ="9123456">
-                          </div>
-                          <div class="form-group col-4">
-                            <label class=" ">Email</label>
-                            <input type="email" class="form-control " id="inputEmail3" value ="9123456@xxx.com">
-                          </div>
-                          
-        
-                          <div class="col-6">
-                            <div class="form-floating">
-                              <textarea class="form-control" placeholder="Leave a notes here" id="floatingTextarea2" style="height: 50px"></textarea>
-                              <label for="floatingTextarea2">Contact Address</label>
-                            </div>
-                          </div>
-                        </div>
-                       
-        
-                        <div class="row"> 
-                          <div class="form-group col-3">
-                            <label class=" ">Nationality</label>
-                            <input type="text" class="form-control " id="inputEmail3" value ="XXX">
-                          </div>
-                          <div class="form-group col-3">
-                            <label class=" ">Occupation</label>
-                            <input type="text" class="form-control " id="inputEmail3" value ="">
-                          </div>
-                      </div>
-                      </div>
-                    </div>
-                  </div>
+                 
 
                   <div class="accordion-item" style="display: none;">
                     <h2 class="accordion-header">
@@ -447,6 +407,47 @@
 
                   <h5 class="heading-1 pl-3 mb-3 mt-3"><span>Information (For Type)</span></h5>
                   <div class="accordion" id="accordionExample22">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseZero0" aria-expanded="false" aria-controls="collapseZero0">
+                          Contact information 
+                        </button>
+                      </h2>
+                      <div id="collapseZero0" class="accordion-collapse collapse " data-bs-parent="#accordionExample22">
+                        <div class="accordion-body">
+                          <div class="row ">
+                            <div class="form-group col-2">
+                              <label class=" ">Mobile Phone</label>
+                              <input type="phone" class="form-control " id="inputEmail3" value ="9123456">
+                            </div>
+                            <div class="form-group col-4">
+                              <label class=" ">Email</label>
+                              <input type="email" class="form-control " id="inputEmail3" value ="9123456@xxx.com">
+                            </div>
+                            
+          
+                            <div class="col-6">
+                              <div class="form-floating">
+                                <textarea class="form-control" placeholder="Leave a notes here" id="floatingTextarea2" style="height: 50px"></textarea>
+                                <label for="floatingTextarea2">Contact Address</label>
+                              </div>
+                            </div>
+                          </div>
+                         
+          
+                          <div class="row"> 
+                            <div class="form-group col-3">
+                              <label class=" ">Nationality</label>
+                              <input type="text" class="form-control " id="inputEmail3" value ="XXX">
+                            </div>
+                            <div class="form-group col-3">
+                              <label class=" ">Occupation</label>
+                              <input type="text" class="form-control " id="inputEmail3" value ="">
+                            </div>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
                   <div class="accordion-item">
                     <h2 class="accordion-header">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -811,22 +812,6 @@
                               <td>HKID: A12345 <br/> Passport: B1245</td>
                               <td>01/01/2024</td>
                               <td>01/12/2023</td>
-                            </tr>
-                            <tr>
-                              <td></td>
-                              <td colspan="6" class="hiddenRow p-0">
-                                <div class="collapse" id="collapse-1"> 
-                                  <div class="card card-body m-3">
-                                    <!-- Expanded content here -->
-                                    <div class="row">
-                                      <div class="col-3">Effective Date:</div>
-                                      <div class="col-3">One Month Later</div>
-                                      <div class="col-3">Last Visa Expire Date:</div>
-                                      <div class="col-3">01/12/2023</div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </td>
                             </tr>
                       
                             <!-- Second Row -->
@@ -2452,7 +2437,7 @@
         <div class="row mb-3">
           <div class="col-6">
            <label for="language">Worker Type:</label><span style="color: red;">*</span>
-           <select id="workerTypeSelect" class="form-select" name="language" onchange="hideJobOrder()">
+           <select id="workerTypeSelect" class="form-select" name="language" onchange="handleWorkerTypeChange()">
    
              <option value="na" selected>-- Please Select --</option>
              <option value="oversea" >OVERSEA FIRST TIME</option>
@@ -2463,8 +2448,25 @@
            </select>
    
           </div>
-   
-          <div class="col-6">
+          <div id="helperToBeRenewDiv" class="col-6" style="display: none;">
+            <label for="language">Helper to be Renew:</label><span style="color: red;">*</span>
+            <select id="helperToBeRenew" class="form-select" name="language" onchange="handleHelperRenewChange()">
+    
+              <option value="na" selected>-- Please Select --</option>
+              <option value="mary" >Mary</option>
+              <option value="other">Helper hired from other agency </option>
+              <!-- Add more language options as needed -->
+            </select>
+    
+           </div>
+           <div id="dragHKIDDiv" class="col-12" style="display: none;  padding: 10px;">
+            <label for="language">Helper's HKID:</label><span style="color: red;">*</span>
+        
+              <div class="drop-container mb-3" style="height: 100%;" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event)">
+                <p>Drag and drop File here</p>
+              </div>
+           </div>
+          <div class="col-6 mt-3">
              <label for="language">Please select the reason for Employment:</label><span style="color: red;">*</span>
                <select id="employReasonSelect" class="form-select" name="language" onchange="hideJobOrder()">
    
@@ -2481,7 +2483,7 @@
          <div class="row mb-3">
            <div class="col-6">
             <label for="language">Any replacement Helper still working now or leaved already?</label><span style="color: red;">*</span>
-            <select id="workerTypeSelect" class="form-select" name="language" onchange="hideJobOrder()">
+            <select id="workerTypeSelect1" class="form-select" name="language" onchange="hideJobOrder()">
     
               <option value="na" selected>-- Please Select --</option>
               <option value="oversea" >Yes</option>
@@ -2537,7 +2539,7 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary">Save </button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closePreview()">Close</button>
       </div>
     </div>
@@ -3241,6 +3243,36 @@ function toggleAddress() {
         otherAddressField.style.display = 'block';
     } else {
         otherAddressField.style.display = 'none';
+    }
+}
+
+function handleWorkerTypeChange() {
+    const workerType = document.getElementById('workerTypeSelect').value;
+    const helperToBeRenewRow = document.getElementById('helperToBeRenewDiv');
+    const otherHelperRow = document.getElementById('otherHelperDiv');
+    
+    // Show/hide helper to be renew dropdown
+    if (workerType === 'renew') {
+        helperToBeRenewRow.style.display = '';
+    } else {
+        helperToBeRenewRow.style.display = 'none';
+        // Reset helper selection when worker type changes
+        document.getElementById('helperToBeRenew').value = '';
+        otherHelperRow.style.display = 'none';
+      //  document.getElementById('otherHelperInput').value = '';
+    }
+}
+
+function handleHelperRenewChange() {
+    const helperSelect = document.getElementById('helperToBeRenew').value;
+    const otherHelperRow = document.getElementById('dragHKIDDiv');
+    
+    // Show/hide other helper input
+    if (helperSelect === 'other') {
+        otherHelperRow.style.display = '';
+    } else {
+        otherHelperRow.style.display = 'none';
+      //  document.getElementById('otherHelperInput').value = '';
     }
 }
 </script>
