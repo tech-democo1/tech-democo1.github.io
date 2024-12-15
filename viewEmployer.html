@@ -1334,14 +1334,101 @@
                           <input type="date" class="form-control" readonly required>
                         </div>
                         <div class="form-group col-sm-3">
-                          <label>Employer Reason</label>
-                          <input type="text" class="form-control" readonly>
+                          <label>End Contract Reason</label>
+                          <select class="form-select" >
+                            <option value="none">-Please Select-</option>
+                            <option value="jan1">Terminate Contract</option>
+                            <option value="cny1">Finish Contract</option>
+                            </select>
                         </div>
                         <div class="form-group col-sm-3">
-                          <label>Helper Reason</label>
-                          <input type="text" class="form-control" readonly>
+                          <label>Terminate Contract</label>
+                          <select class="form-select" >
+                            <option value="none">-Please Select-</option>
+                            <option value="jan1">Employer without 1 month notice - effective date </option>
+                            <option value="cny1">Employer give 1 month notice - effective date </option>
+                            <option value="">Helper without 1 month notice - effective date </option>
+                            <option value="">Helper give 1 month notice - effective date </option>
+                            </select>
+                        </div>
+                        <div class="form-group col-sm-3">
+                          <label>Finish Contract</label>
+                          <select class="form-select" >
+                            <option value="none">-Please Select-</option>
+                            <option value="jan1">Employer no longer need a helper  </option>
+                            <option value="cny1">Helper not renew  </option>
+                            <option value="">Employer not renew find replacement  </option>
+                            </select>
                         </div>
 
+                      </div>
+                      <div class="row">
+                        <div class="form-group col-sm-6">
+                          <label>Have you use last contract annul leave ? </label>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                              Yes
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                            <label class="form-check-label" for="exampleRadios2">
+                              No
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="form-group col-sm-6">
+                          <label>Have you use this current contract annual leave ? </label>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                              Yes
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                            <label class="form-check-label" for="exampleRadios2">
+                              No
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="form-group col-sm-6">
+                          <label>Did you have any statutary holiday haven’t use? </label>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                              Yes
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                            <label class="form-check-label" for="exampleRadios2">
+                              No
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="form-group col-sm-6">
+                          <label>Did you have any Regular  holiday haven’t use? </label>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                              Yes
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                            <label class="form-check-label" for="exampleRadios2">
+                              No
+                            </label>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1364,16 +1451,7 @@
                       <div class="row m-3">
                         <table class="px-5">
                           <tr><Td>Total Vocation Taken: 2</Td>
-                          <td>Used Annual Leave: 10</td>
-                          <td>No Pay Leave Taken: 10</td>
-                          </tr>
-                          <tr>
-                            <td>Regular Rest Day Taken: 1</td>
-                            <td>Statutory Holiday Taken: 1</td>
-                            <td>As a gift (Still pay in salary): 1</td>
-                          </tr>
-                          <tr>
-                            <td>Annual Leave Remain: 3</td>
+                          <td>Annual Leave Remain: 3</td>
                           </tr>
                         </table>
                       </div>
@@ -1392,7 +1470,7 @@
                             <td>10/01/2023</td>
                             <td>20/01/2023</td>
                             <td>10 days</td>
-                            <td><button type="button" class="btn btn-outline-info"><i class="bi bi-search me-2"></i>View</button> </td>
+                            <td><button type="button" class="btn btn-outline-info"  onclick="completeVocation()"><i class="bi bi-search me-2"></i>View</button> </td>
                           </tr>
                           <tr>
                             <td>2</td>
@@ -2100,14 +2178,7 @@
           </div>
           <div class="form-group col-4">
             <label for="language">Refer this ticket as</label>
-            <select id="departurefr" name="language" class="form-select" readonly>
-              <option value="english" selected>By Employer's gift</option>
-              <option value="chinese">By Helper money</option>
-              <option value="borrowMoney">Borrow money by employer</option>
-              <option value="chinese">Advance Current Contract</option>
-              <option value="chinese">End Contract Use</option>
-              <!-- Add more language options as needed -->
-            </select>
+            <input type="text" class="form-control " id="inputEmail3" value="By Employer's gift" readonly>
           </div>
         </div>
         <div class="row mb-3">
@@ -2117,13 +2188,7 @@
           </div>
           <div class="form-group col-4">
             <label for="language">Refer this ticket as</label>
-            <select id="departurefr" name="language" class="form-select" readonly>
-              <option value="english">By Employer's gift</option>
-              <option value="chinese">By Helper money</option>
-              <option value="borrowMoney">Borrow money by employer</option>
-              <option value="chinese" selected>For Next Renew Use</option>
-              <!-- Add more language options as needed -->
-            </select>
+            <input type="text" class="form-control " id="inputEmail3" value="For Next Renew Use" readonly>
           </div>
          
         </div>
@@ -2167,7 +2232,6 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary"  onclick="completeVocation()">Save</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closePreview()">Close</button>
       </div>
     </div>
@@ -2663,6 +2727,15 @@
     <div class="preview-container">
       <div class="row">
         <span style="text-align: left;">PH Branches Set </span>
+      </div>
+      <div class="row pt-2 mb-3">
+        <div class="col-2">
+        </div>
+        <div class="col d-flex justify-content-end">
+            <button type="button" class="btn btn-success me-2"><i class="bi bi-whatsapp me-2"></i> Share via WhatsApp</button>
+            <button type="button" class="btn btn-success me-2"><i class="bi bi-envelope-at-fill me-2"></i>Share via Email</button>
+            <button type="button" class="btn btn-success"><i class="bi bi-file-earmark-arrow-down me-2"></i>Download</button>
+        </div>
       </div>
       <div class="row">
         <div class="col-sm-3">
