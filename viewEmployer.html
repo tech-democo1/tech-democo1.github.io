@@ -1322,7 +1322,7 @@
                 <div class="accordion-item">
                   <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThird0ty" aria-expanded="false" aria-controls="collapseZero0">
-                      Terminate of Contract Use 
+                      End Contract Use 
                     </button>
                   </h2>
                   <div id="collapseThird0ty" class="accordion-collapse collapse " data-bs-parent="#HelperaccordionExample">
@@ -1349,14 +1349,60 @@
                 <div class="accordion-item">
                   <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#vocacollapseThird0ty" aria-expanded="false" aria-controls="vocacollapseThird0ty">
-                      Vacation Information
+                      Vocation Use
                       </button>
                   </h2>
                   <div id="vocacollapseThird0ty" class="accordion-collapse collapse " data-bs-parent="#HelperaccordionExample">
                     <div class="accordion-body">
                       <div class="row mb-3">
-                      </div>
+                        <div class="col-sm-3">
+                          <button type="button" class="btn btn-light" onclick="openNewVacationDia()">New Vocation</button>
+                        </div>
 
+
+                      </div>
+                      <div class="row m-3">
+                        <table class="px-5">
+                          <tr><Td>Total Vocation Taken: 2</Td>
+                          <td>Used Annual Leave: 10</td>
+                          <td>No Pay Leave Taken: 10</td>
+                          </tr>
+                          <tr>
+                            <td>Regular Rest Day Taken: 1</td>
+                            <td>Statutory Holiday Taken: 1</td>
+                            <td>As a gift (Still pay in salary): 1</td>
+                          </tr>
+                          <tr>
+                            <td>Annual Leave Remain: 3</td>
+                          </tr>
+                        </table>
+                      </div>
+                  
+                      <div class="row mb-3">
+                        <table class="table table-bordered">
+                          <tr>
+                            <td></td>
+                            <td>Departure Date</td>
+                            <td>Return Date</td>
+                            <td>Vocation Period</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>1</td>
+                            <td>10/01/2023</td>
+                            <td>20/01/2023</td>
+                            <td>10 days</td>
+                            <td><button type="button" class="btn btn-outline-info"><i class="bi bi-search me-2"></i>View</button> </td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>10/12/2024</td>
+                            <td>25/12/2024</td>
+                            <td>15 days</td>
+                            <td><button type="button" class="btn btn-outline-info"><i class="bi bi-search me-2"></i>View</button> </td>
+                          </tr>
+                        </table>
+                        </div>
 
 
                       
@@ -1423,7 +1469,10 @@
                     <tr>
                       <td style="padding: 5px;">Receipt</td>
                       <td style="padding:5px;">
-                        <span id="jobOrderStatus" class="text-bg-primary" >Ready to print</span>
+                        <!--<span id="jobOrderStatus" class="text-bg-primary" >Ready to print</span>-->
+                        <button type="button" class="btn btn-primary">
+                          <i class="bi bi-file-earmark-text-fill"></i> Preview
+                        </button>
                       </td>
                       <td style="padding:5px;">
                       <button type="button" class="btn btn-success me-2" ><i class="bi bi-printer-fill  me-2"></i>Print</button>
@@ -1432,7 +1481,10 @@
                     <tr>
                       <td style="padding: 5px;">PH Branches Doc</td>
                       <td style="padding: 5px;">
-                        <span id="jobOrderStatus" class="text-bg-danger" >Info Missing</span>
+                       <!-- <span id="jobOrderStatus" class="text-bg-danger" >Info Missing</span>-->
+                        <button type="button" class="btn btn-primary">
+                          <i class="bi bi-file-earmark-text-fill"></i> Preview
+                        </button>
                       </td>
                       <td style="padding:5px;">
                         <button type="button" class="btn btn-success me-2" disabled><i class="bi bi-printer-fill  me-2"></i>Print</button>
@@ -1441,7 +1493,10 @@
                     <tr>
                       <td style="padding: 5px;">Helper Doc</td>
                       <td style="padding: 5px;">
-                        <span id="jobOrderStatus" class="text-bg-danger" >Info Missing</span>
+                        <!--<span id="jobOrderStatus" class="text-bg-danger" >Info Missing</span>-->
+                        <button type="button" class="btn btn-primary">
+                          <i class="bi bi-file-earmark-text-fill"></i> Preview
+                        </button>
                       </td>
                       <td style="padding:5px;">
                         <button type="button" class="btn btn-success me-2" disabled><i class="bi bi-printer-fill  me-2"></i>Print</button>
@@ -1450,7 +1505,10 @@
                     <tr>
                       <td style="padding: 5px;">Immigration Set</td>
                       <td style="padding: 5px;">
-                        <span id="jobOrderStatus" class="text-bg-danger" >Info Missing</span>
+                        <!--<span id="jobOrderStatus" class="text-bg-danger" >Info Missing</span>-->
+                        <button type="button" class="btn btn-primary">
+                          <i class="bi bi-file-earmark-text-fill"></i> Preview
+                        </button>
                       </td>
                       <td style="padding:5px;">
                         <button type="button" class="btn btn-success me-2" disabled><i class="bi bi-printer-fill  me-2"></i>Print</button >
@@ -1459,7 +1517,10 @@
                     <tr>
                       <td style="padding: 5px;">ID407 Contract</td>
                       <td style="padding: 5px;">
-                        <span id="jobOrderStatus" class="text-bg-danger" >Info Missing</span>
+                         <!--<span id="jobOrderStatus" class="text-bg-danger" >Info Missing</span>-->
+                        <button type="button" class="btn btn-primary">
+                          <i class="bi bi-file-earmark-text-fill"></i> Preview
+                        </button>
                       </td>
                       <td style="padding:5px;">
                         <button type="button" class="btn btn-success me-2" disabled><i class="bi bi-printer-fill  me-2"></i>Print</button >
@@ -1468,7 +1529,10 @@
                     <tr>
                       <td style="padding: 5px;">Consulate Set</td>
                       <td style="padding: 5px;">
-                        <span id="jobOrderStatus" class="text-bg-danger" >Info Missing</span>
+                       <!-- <span id="jobOrderStatus" class="text-bg-danger" >Info Missing</span>-->
+                        <button type="button" class="btn btn-primary">
+                          <i class="bi bi-file-earmark-text-fill"></i> Preview
+                        </button>
                       </td>
                       <td style="padding:5px;">
                         <button type="button" class="btn btn-success me-2" disabled><i class="bi bi-printer-fill  me-2"></i>Print</button >
@@ -1477,7 +1541,10 @@
                     <tr>
                       <td style="padding: 5px;">Start Work Set</td>
                       <td style="padding: 5px;">
-                        <span id="jobOrderStatus" class="text-bg-danger" >Info Missing</span>
+                        <!--<span id="jobOrderStatus" class="text-bg-danger" >Info Missing</span>-->
+                        <button type="button" class="btn btn-primary">
+                          <i class="bi bi-file-earmark-text-fill"></i> Preview
+                        </button>
                       </td>
                       <td style="padding:5px;">
                         <button type="button" class="btn btn-success me-2" disabled><i class="bi bi-printer-fill  me-2"></i>Print</button >
@@ -1500,7 +1567,7 @@
                       <td style="padding: 5px;">Go Down</td>
                       <td style="padding:5px;">
                         <button type="button" class="btn btn-primary">
-                          <i class="bi bi-file-earmark-text-fill"></i> Apply
+                          <i class="bi bi-file-earmark-text-fill"></i> Preview
                         </button>
                       </td>
                       <td style="padding:5px;">
@@ -1511,7 +1578,7 @@
                       <td style="padding: 5px;">Change Address</td>
                       <td style="padding: 5px;">
                         <button type="button" class="btn btn-primary">
-                          <i class="bi bi-file-earmark-text-fill"></i> Apply
+                          <i class="bi bi-file-earmark-text-fill"></i> Preview
                         </button>
                       </td>
                       <td style="padding:5px;">
@@ -1522,7 +1589,7 @@
                       <td style="padding: 5px;">Cancel Process</td>
                       <td style="padding: 5px;">
                         <button type="button" class="btn btn-primary">
-                          <i class="bi bi-file-earmark-text-fill"></i> Apply
+                          <i class="bi bi-file-earmark-text-fill"></i> Preview
                         </button>
                       </td>
                       <td style="padding:5px;">
@@ -1533,7 +1600,7 @@
                       <td style="padding: 5px;">Refund Fees</td>
                       <td style="padding: 5px;">
                         <button type="button" class="btn btn-primary">
-                          <i class="bi bi-file-earmark-text-fill"></i> Apply
+                          <i class="bi bi-file-earmark-text-fill"></i> Preview
                         </button>
                       </td>
                       <td style="padding:5px;">
@@ -1554,7 +1621,7 @@
                       <td style="padding: 5px;">After Finish Contract</td>
                       <td style="padding:5px;">
                         <button type="button" class="btn btn-primary">
-                          <i class="bi bi-file-earmark-text-fill"></i> Apply
+                          <i class="bi bi-file-earmark-text-fill"></i> Preview
                         </button>
                       </td>
                       <td style="padding:5px;">
@@ -1565,7 +1632,7 @@
                       <td style="padding: 5px;">After Renew Passport</td>
                       <td style="padding: 5px;">
                         <button type="button" class="btn btn-primary">
-                          <i class="bi bi-file-earmark-text-fill"></i> Apply
+                          <i class="bi bi-file-earmark-text-fill"></i> Preview
                         </button>
                       </td>
                       <td style="padding:5px;">
@@ -1576,7 +1643,7 @@
                       <td style="padding: 5px;">Overstay</td>
                       <td style="padding: 5px;">
                         <button type="button" class="btn btn-primary">
-                          <i class="bi bi-file-earmark-text-fill"></i> Apply
+                          <i class="bi bi-file-earmark-text-fill"></i> Preview
                         </button>
                       </td>
                       <td style="padding:5px;">
@@ -1587,7 +1654,7 @@
                       <td style="padding: 5px;">Entry HK</td>
                       <td style="padding: 5px;">
                         <button type="button" class="btn btn-primary">
-                          <i class="bi bi-file-earmark-text-fill"></i> Apply
+                          <i class="bi bi-file-earmark-text-fill"></i> Preview
                         </button>
                       </td>
                       <td style="padding:5px;">
@@ -1614,7 +1681,7 @@
                 <br>
                 
               </div>
-              <div class="well">
+              <div class="well" style="display: none;">
                 <button class="accordion1" onclick="openCalDia()">Labour Calculation</button>
                 <button class="accordion1" onclick="openNewVocationDialog()">New Vocation</button>
               </div>
@@ -1914,6 +1981,201 @@
   </div>
 </div>
 
+<div id="newVacationDialog" class="modal" tabindex="-1" >
+  <div class="modal-dialog modal-lg" >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">New Vocation</h5>
+        
+        <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="closePreview()"></button>
+      </div>
+      <div class="modal-body">
+        <h5 class="heading-1 pl-3 mb-3 mt-3"><span>Ticket Part</span></h5>
+
+        <div class="row mb-3">
+          <div class="form-group col-3">
+            <label class=" ">Departure From Hong Kong</label>
+            <input type="date" class="form-control " id="inputEmail3" >
+          </div>
+          <div class="form-group col-4">
+            <label for="language">Refer this ticket as</label>
+            <select id="departurefr" name="language" class="form-select">
+              <option value="english">By Employer's gift</option>
+              <option value="chinese">By Helper money</option>
+              <option value="borrowMoney">Borrow money by employer</option>
+              <option value="chinese">Advance Current Contract</option>
+              <option value="chinese">End Contract Use</option>
+              <!-- Add more language options as needed -->
+            </select>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="form-group col-3">
+            <label class=" ">Returning to Hong Kong</label>
+            <input type="date" class="form-control " id="inputEmail3" >
+          </div>
+          <div class="form-group col-4">
+            <label for="language">Refer this ticket as</label>
+            <select id="departurefr" name="language" class="form-select">
+              <option value="english">By Employer's gift</option>
+              <option value="chinese">By Helper money</option>
+              <option value="borrowMoney">Borrow money by employer</option>
+              <option value="chinese">For Next Renew Use</option>
+              <!-- Add more language options as needed -->
+            </select>
+          </div>
+         
+        </div>
+        <h5 class="heading-1 pl-3 mb-3 mt-3"><span>Vocation Period</span></h5>
+
+        <div class="row mb-3">
+          <div class="form-group col-3">
+            <label class=" ">Total Days </label>
+            <input type="text" class="form-control " id="inputEmail3" value="5" readonly >
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label class=" ">Refer Vocation Period Is </label>
+
+        </div>
+        <div class="row mb-3">
+          <div class="form-group col-3">
+          <label class=" ">No Pay Leave </label>
+          <input type="number" id="quantity" name="quantity" min="1" max="60">
+        </div>
+        <div class="form-group col-3">
+          <label class=" ">Pre Use Annual Leave </label>
+          <input type="number" id="quantity" name="quantity" min="1" max="60">
+        </div>
+        <div class="form-group col-3">
+          <label class=" ">Spend leave </label>
+          <input type="number" id="quantity" name="quantity" min="1" max="60">
+        </div>
+        <div class="form-group col-3">
+          <label class=" ">Still pay in Salary </label>
+          <input type="number" id="quantity" name="quantity" min="1" max="60">
+        </div>
+        <div class="form-group col-3">
+          <label class=" ">Regular Holiday </label>
+          <input type="number" id="VocationRegHoliday" name="quantity" min="1" max="60" >
+        </div>
+        <div class="form-group col-3">
+          <label class=" ">Statutory Holiday </label>
+          <input type="number" id="VocationStatHoliday" name="quantity" min="1" max="60">
+        </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary"  onclick="completeVocation()">Save</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closePreview()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="completedVacationDialog" class="modal" tabindex="-1" >
+  <div class="modal-dialog modal-lg" >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"></h5>
+        
+        <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="closePreview()"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row pt-2 mb-3">
+          <div class="col-2">
+          </div>
+          <div class="col d-flex justify-content-end">
+              <button type="button" class="btn btn-success me-2"><i class="bi bi-whatsapp me-2"></i> Share via WhatsApp</button>
+              <button type="button" class="btn btn-success me-2"><i class="bi bi-envelope-at-fill me-2"></i>Share via Email</button>
+              <button type="button" class="btn btn-success"><i class="bi bi-file-earmark-arrow-down me-2"></i>Download</button>
+          </div>
+        </div>
+        <h5 class="heading-1 pl-3 mb-3 mt-3"><span>Ticket Part</span></h5>
+
+        <div class="row mb-3">
+          <div class="form-group col-3">
+            <label class=" ">Departure From Hong Kong</label>
+            <input type="date" class="form-control " id="inputEmail3" value="2024-09-10" readonly>
+          </div>
+          <div class="form-group col-4">
+            <label for="language">Refer this ticket as</label>
+            <select id="departurefr" name="language" class="form-select" readonly>
+              <option value="english" selected>By Employer's gift</option>
+              <option value="chinese">By Helper money</option>
+              <option value="borrowMoney">Borrow money by employer</option>
+              <option value="chinese">Advance Current Contract</option>
+              <option value="chinese">End Contract Use</option>
+              <!-- Add more language options as needed -->
+            </select>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="form-group col-3">
+            <label class=" ">Returning to Hong Kong</label>
+            <input type="date" class="form-control " id="inputEmail3" value="2024-09-24" readonly>
+          </div>
+          <div class="form-group col-4">
+            <label for="language">Refer this ticket as</label>
+            <select id="departurefr" name="language" class="form-select" readonly>
+              <option value="english">By Employer's gift</option>
+              <option value="chinese">By Helper money</option>
+              <option value="borrowMoney">Borrow money by employer</option>
+              <option value="chinese" selected>For Next Renew Use</option>
+              <!-- Add more language options as needed -->
+            </select>
+          </div>
+         
+        </div>
+        <h5 class="heading-1 pl-3 mb-3 mt-3"><span>Vocation Period</span></h5>
+
+        <div class="row mb-3">
+          <div class="form-group col-3">
+            <label class=" ">Total Days </label>
+            <input type="text" class="form-control " id="inputEmail3" value="14" readonly >
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label class=" ">Refer Vocation Period Is </label>
+
+        </div>
+        <div class="row mb-3">
+          <div class="form-group col-3">
+          <label class=" ">No Pay Leave </label>
+          <input type="text" class="form-control " id="quantity" name="quantity" value="0" readonly>
+        </div>
+        <div class="form-group col-3">
+          <label class=" ">Pre Use Annual Leave </label>
+          <input type="text" class="form-control " id="quantity" name="quantity" value="6" readonly>
+        </div>
+        <div class="form-group col-3">
+          <label class=" ">Spend Annual leave </label>
+          <input type="text" class="form-control " id="quantity" name="quantity" value="4" readonly>
+        </div>
+        <div class="form-group col-3">
+          <label class=" ">Still pay in Salary </label>
+          <input type="text" class="form-control " id="quantity" name="quantity" value="0" readonly>
+        </div>
+        <div class="form-group col-3">
+          <label class=" ">Regular Holiday </label>
+          <input type="text" class="form-control " id="VocationRegHoliday" value="2" name="quantity" readonly>
+        </div>
+        <div class="form-group col-3">
+          <label class=" ">Statutory Holiday </label>
+          <input type="text" class="form-control " id="VocationStatHoliday" value="2" name="quantity" readonly>
+        </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary"  onclick="completeVocation()">Save</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closePreview()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 <div id="extendVisaDialog" class="modal" tabindex="-1" >
   <div class="modal-dialog modal-lg" >
     <div class="modal-content">
@@ -1940,7 +2202,8 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary">Save changes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"
+        onclick="closePreview()">Close</button>
       </div>
     </div>
   </div>
@@ -2868,7 +3131,8 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary">Save changes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"
+        onclick="closePreview()">Close</button>
       </div>
     </div>
   </div>
@@ -3238,6 +3502,9 @@ function openPreviewDialog() {
       document.getElementById("updatedDocDialog").style.display = "none";
       document.getElementById("labourCalDia").style.display = "none";
       document.getElementById("extendVisaDialog").style.display = "none";
+      document.getElementById("newVacationDialog").style.display = "none";
+      document.getElementById("completedVacationDialog").style.display = "none";
+      
       document.getElementById("printDocDialog").style.display = "none";
       document.getElementById("newVocationDialog").style.display = "none";
     }
@@ -3254,12 +3521,19 @@ function openPreviewDialog() {
     function openExtendVisaDia() {
       document.getElementById("extendVisaDialog").style.display = "block";
     }
+    function openNewVacationDia() {
+      document.getElementById("newVacationDialog").style.display = "block";
+    }
 
     function openNewVocationDialog() {
       document.getElementById("newVocationDialog").style.display = "block";
     }
     
+function completeVocation(){
+  document.getElementById("newVacationDialog").style.display = "none";
+  document.getElementById("completedVacationDialog").style.display = "block";
 
+}
     var accPrint = document.getElementsByClassName("accordionPrint");
 var a;
 
@@ -3322,6 +3596,8 @@ function handleHelperRenewChange() {
       //  document.getElementById('otherHelperInput').value = '';
     }
 }
+
+
 </script>
 
 <style>
