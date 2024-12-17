@@ -1328,21 +1328,27 @@
                   <div id="collapseThird0ty" class="accordion-collapse collapse " data-bs-parent="#HelperaccordionExample">
                     <div class="accordion-body">
                       <div class="row mb-3">
-
+                   
                         <div class="form-group col-sm-3">
-                          <label>Last Working Date</label>
-                          <input type="date" class="form-control" readonly required>
-                        </div>
-                        <div class="form-group col-sm-3">
-                          <label>End Contract Reason</label>
-                          <select class="form-select" >
+                          <label>End Contract Type</label>
+                          <select id="endContractType" class="form-select" >
                             <option value="none">-Please Select-</option>
-                            <option value="jan1">Terminate Contract</option>
-                            <option value="cny1">Finish Contract</option>
+                            <option value="terminateContract">Terminate Contract</option>
+                            <option value="finishContract">Finish Contract</option>
                             </select>
                         </div>
-                        <div class="form-group col-sm-3">
-                          <label>Terminate Contract</label>
+                        <div class="form-group col-sm-3" id="applyEndContractBtn">
+                          <button type="button" class="btn btn-light" style="text-align: bottom;" onclick="endContract()">Apply</button></div>
+
+                        </div>
+                        <div id="endContractQA" style="display: none;">
+                        <div class="row mb-3">
+                          <div class="form-group col-sm-3">
+                            <label>Last Working Date</label>
+                            <input type="date" class="form-control" value="2024-11-01" readonly required>
+                          </div>
+                        <div id="terminateContractReason" class="form-group col-sm-6" style="display:none">
+                          <label>Terminate Contract Reason</label>
                           <select class="form-select" >
                             <option value="none">-Please Select-</option>
                             <option value="jan1">Employer without 1 month notice - effective date </option>
@@ -1351,8 +1357,8 @@
                             <option value="">Helper give 1 month notice - effective date </option>
                             </select>
                         </div>
-                        <div class="form-group col-sm-3">
-                          <label>Finish Contract</label>
+                        <div id="finishContractReason" class="form-group col-sm-6" style="display:none">
+                          <label>Finish Contract Reason</label>
                           <select class="form-select" >
                             <option value="none">-Please Select-</option>
                             <option value="jan1">Employer no longer need a helper  </option>
@@ -1362,7 +1368,7 @@
                         </div>
 
                       </div>
-                      <div class="row">
+                      <div class="row endContractQAGroup">
                         <div class="form-group col-sm-6">
                           <label>Have you use last contract annul leave ? </label>
                           <div class="form-check">
@@ -1379,7 +1385,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="row">
+                      <div class="row endContractQAGroup">
                         <div class="form-group col-sm-6">
                           <label>Have you use this current contract annual leave ? </label>
                           <div class="form-check">
@@ -1396,7 +1402,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="row">
+                      <div class="row endContractQAGroup">
                         <div class="form-group col-sm-6">
                           <label>Did you have any statutary holiday haven’t use? </label>
                           <div class="form-check">
@@ -1413,20 +1419,42 @@
                           </div>
                         </div>
                       </div>
-                      <div class="row">
-                        <div class="form-group col-sm-6">
-                          <label>Did you have any Regular  holiday haven’t use? </label>
-                          <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                            <label class="form-check-label" for="exampleRadios1">
-                              Yes
-                            </label>
+                        <div class="row endContractQAGroup">
+                          <div class="form-group col-sm-6">
+                            <label>Did you have any Regular holiday haven’t use? </label>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                              <label class="form-check-label" for="exampleRadios1">
+                                Yes
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                              <label class="form-check-label" for="exampleRadios2">
+                                No
+                              </label>
+                            </div>
                           </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                            <label class="form-check-label" for="exampleRadios2">
-                              No
-                            </label>
+                        </div>
+                        <div class="row">
+                          <div class="form-group col-sm-3">
+                            <button type="button" class="btn btn-light" style="text-align: bottom;" onclick="cancelEndContract()">cancel</button>
+                          </div>
+                          <div class="form-group col-sm-3">
+                          </div>
+                          <div class="form-group col-sm-3">
+                            <button type="button" class="btn btn-primary" style="text-align: bottom;" onclick="saveEndContract()">Save</button>
+                          </div>
+                        </div>
+                        <div class="row" id="endContractPrintRow" style="display:none">
+                          <div class="row pt-2 mb-3">
+                            <div class="col-2">
+                            </div>
+                            <div class="col d-flex justify-content-end">
+                                <button type="button" class="btn btn-success me-2"><i class="bi bi-whatsapp me-2"></i> Share via WhatsApp</button>
+                                <button type="button" class="btn btn-success me-2"><i class="bi bi-envelope-at-fill me-2"></i>Share via Email</button>
+                                <button type="button" class="btn btn-success"><i class="bi bi-file-earmark-arrow-down me-2"></i>Download</button>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -3607,6 +3635,42 @@ function completeVocation(){
   document.getElementById("completedVacationDialog").style.display = "block";
 
 }
+
+function endContract(){
+  document.getElementById("endContractQA").style.display = "block";
+  const endContractType = document.getElementById('endContractType').value;
+
+  if(endContractType==='terminateContract'){
+    document.getElementById("terminateContractReason").style.display = "block";
+    document.getElementById("finishContractReason").style.display = "none";
+    document.getElementById("applyEndContractBtn").style.display = "none";
+    document.getElementById("cancelEndContractBtn").style.display = "none";
+    document.getElementById("confirmEndContractBtn").style.display = "none";
+  }else if (endContractType==='finishContract'){
+    document.getElementById("finishContractReason").style.display = "block";
+    document.getElementById("terminateContractReason").style.display = "none";
+    document.getElementById("applyEndContractBtn").style.display = "none";
+    document.getElementById("cancelEndContractBtn").style.display = "block";
+    document.getElementById("confirmEndContractBtn").style.display = "block";
+  }
+}
+
+function cancelEndContract(){
+  document.getElementById("terminateContractReason").style.display = "none";
+  document.getElementById("finishContractReason").style.display = "none";
+  document.getElementById("endContractQA").style.display = "none";
+  document.getElementById('endContractType').value = "none";
+  document.getElementById("applyEndContractBtn").style.display = "block";
+  document.getElementById("endContractPrintRow").style.display = "none";
+
+}
+function saveEndContract(){
+
+document.getElementById("endContractPrintRow").style.display = "block";
+document.getElementById("applyEndContractBtn").style.display = "none";
+}
+
+
     var accPrint = document.getElementsByClassName("accordionPrint");
 var a;
 
