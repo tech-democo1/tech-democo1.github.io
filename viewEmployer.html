@@ -1288,11 +1288,42 @@
                 <div class="accordion-item">
                   <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseZero0" aria-expanded="false" aria-controls="collapseZero0">
-                      Contact information 
+                      For Immigration Use
                     </button>
                   </h2>
                   <div id="collapseZero0" class="accordion-collapse collapse " data-bs-parent="#HelperaccordionExample">
                     <div class="accordion-body">
+                      <div class="row mb-3">
+                        <div class="form-group col-sm-6">
+                          <label>Have you change you name  passport for immigration last record?</label>
+                          <div class="form-check">
+                              <input class="form-check-input" type="radio" name="lastContractLeave" 
+                                     id="lastContractYes" value="yes">
+                              <label class="form-check-label" for="lastContractYes">
+                                  Yes
+                              </label>
+                          </div>
+                          <div class="form-check">
+                              <input class="form-check-input" type="radio" name="lastContractLeave" 
+                                     id="lastContractNo" value="no"  checked>
+                              <label class="form-check-label" for="lastContractNo">
+                                  No
+                              </label>
+                          </div>
+                  
+                      </div>
+                      <div class="row mb-3">
+                        <div id="terminateContractReason" class="form-group col-sm-6">
+                          <label>If application is approved, arrangement of the helper's home leave will be as follows</label>
+                          <select class="form-select" >
+                            <option value="none">-Please Select-</option>
+                            <option value="jan1">To take leave before commencement of the new contract</option>
+                            <option value="cny1">Mutually agreed to defer leave for not more than one year : ARRANGE BY EMPLOYER</option>
+                            </select>
+                        </div>
+
+                      </div>
+                      </div>
                       <div class="row mb-3">
                         <div class="form-group col-sm-3">
                           <label>HK Mobile</label>
@@ -1862,46 +1893,137 @@
                     <div class="accordion-body">
                       <div class="row mb-3">
                         <div class="col-sm-3">
-                          <button type="button" class="btn btn-light" onclick="openNewVacationDia()">New Vocation</button>
+                          <button type="button" class="btn btn-light" onclick="openNewVacationDia()">Vocation History</button>
                         </div>
 
+                        <h5 class="heading-1 pl-3 mb-3 mt-3"><span>Ticket Part</span></h5>
 
+                        <div class="row mb-3">
+                          <div class="form-group col-3">
+                            <label class=" ">Departure From Hong Kong</label>
+                            <input type="date" class="form-control " id="inputEmail3" >
+                          </div>
+                          <div class="form-group col-4">
+                            <label for="language">Refer this ticket as</label>
+                            <select id="departurefr" name="language" class="form-select">
+                              <option value="english">By Employer's gift</option>
+                              <option value="chinese">By Helper money</option>
+                              <option value="borrowMoney">Borrow money by employer</option>
+                              <option value="chinese">Advance Current Contract</option>
+                              <option value="chinese">End Contract Use</option>
+                              <!-- Add more language options as needed -->
+                            </select>
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <div class="form-group col-3">
+                            <label class=" ">Returning to Hong Kong</label>
+                            <input type="date" class="form-control " id="inputEmail3" >
+                          </div>
+                          <div class="form-group col-4">
+                            <label for="language">Refer this ticket as</label>
+                            <select id="departurefr" name="language" class="form-select">
+                              <option value="english">By Employer's gift</option>
+                              <option value="chinese">By Helper money</option>
+                              <option value="borrowMoney">Borrow money by employer</option>
+                              <option value="chinese">For Next Renew Use</option>
+                              <!-- Add more language options as needed -->
+                            </select>
+                          </div>
+                         
+                        </div>
+                        <h5 class="heading-1 pl-3 mb-3 mt-3"><span>Vocation Period</span></h5>
+                
+                        <div class="row mb-3">
+                          <div class="form-group col-3">
+                            <label class=" ">Total Days </label>
+                            <input type="text" class="form-control " id="inputEmail3" value="5" readonly >
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label class=" ">Refer Vocation Period Is </label>
+                
+                        </div>
+                        <div class="row mb-3">
+                          <div class="form-group col-3">
+                          <label class=" ">No Pay Leave </label>
+                          <input type="number" id="quantity" name="quantity" min="1" max="60">
+                        </div>
+                        <div class="form-group col-3">
+                          <label class=" ">Pre Use Annual Leave </label>
+                          <input type="number" id="quantity" name="quantity" min="1" max="60">
+                        </div>
+                        <div class="form-group col-3">
+                          <label class=" ">Spend leave </label>
+                          <input type="number" id="quantity" name="quantity" min="1" max="60">
+                        </div>
+                        <div class="form-group col-3">
+                          <label class=" ">Still pay in Salary </label>
+                          <input type="number" id="quantity" name="quantity" min="1" max="60">
+                        </div>
+                        <div class="form-group col-3">
+                          <label class=" ">Regular Holiday </label>
+                          <input type="number" id="VocationRegHoliday" name="quantity" min="1" max="60" >
+                        </div>
+                        <div class="form-group col-3">
+                          <label class=" ">Statutory Holiday </label>
+                          <input type="number" id="VocationStatHoliday" name="quantity" min="1" max="60">
+                        </div>
+                        </div>
                       </div>
-                      <div class="row m-3">
-                        <table class="px-5">
-                          <tr><Td>Total Vocation Taken: 2</Td>
-                          <td>Annual Leave Remain: 3</td>
-                          </tr>
-                        </table>
-                      </div>
+                     
+
+                      <button type="button" class="btn btn-primary"  onclick="completeVocation()">Save</button>
+                      
+  
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#CancelcollapseThird0ty" aria-expanded="false" aria-controls=CancelcollapseThird0ty">
+                      Cancel Infomation
+                      </button>
+                  </h2>
+                  <div id="CancelcollapseThird0ty" class="accordion-collapse collapse " data-bs-parent="#HelperaccordionExample">
+                    <div class="accordion-body">
+                     
                   
                       <div class="row mb-3">
-                        <table class="table table-bordered">
-                          <tr>
-                            <td></td>
-                            <td>Departure Date</td>
-                            <td>Return Date</td>
-                            <td>Vocation Period</td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td>1</td>
-                            <td>10/01/2023</td>
-                            <td>20/01/2023</td>
-                            <td>10 days</td>
-                            <td><button type="button" class="btn btn-outline-info"  onclick="completeVocation()"><i class="bi bi-search me-2"></i>View</button> </td>
-                          </tr>
-                          <tr>
-                            <td>2</td>
-                            <td>10/12/2024</td>
-                            <td>25/12/2024</td>
-                            <td>15 days</td>
-                            <td><button type="button" class="btn btn-outline-info"><i class="bi bi-search me-2"></i>View</button> </td>
-                          </tr>
-                        </table>
+                        <div class="form-group col-sm-4">
+                          <label>Cancel Type</label>
+                          <select id="cancelType" class="form-select" >
+                            <option value="none">-Please Select-</option>
+                            <option value="terminateContract">Cancel Process in Immigration</option>
+                            <option value="finishContract">Cancel Resign in Immigration</option>
+                            </select>
                         </div>
+                        <div class="form-group col-sm-3" id="applyCancelApplyBtn">
+                          <button type="button" class="btn btn-light" style="text-align: bottom;" onclick="cancelProcess()">Apply</button>
 
+                        </div>
+                      </div>
 
+                      <div class="row mb-3">
+                        <div class="form-group col-sm-4">
+                        <label for="engName">Resignation letter received for asknowelge number:</label>
+                      <input type="text" id="start" name="trip-start" /></div>
+
+                      <div class="form-group col-sm-4">
+                        <label for="engName">Submitted in immigration on:</label>
+                      <input type="date" id="start" name="trip-start" value="2024-07-22"  />
+                      </div>
+                      </div>
+                    <div class="row mb-3">
+                      <div class="form-group col-sm-4">
+                        <label>Submitted by</label>
+                          <select id="cancelType" class="form-select" >
+                            <option value="none">-Please Select-</option>
+                            <option value="terminateContract">Email</option>
+                            <option value="finishContract">Hand to Immigration Office</option>
+                            </select>
+                      </div>
+                    </div>
                       
   
                     </div>
@@ -2063,7 +2185,7 @@
                     <tr>
                       <td style="padding: 5px;">Go Down</td>
                       <td style="padding:5px;">
-                        <button type="button" class="btn btn-primary">
+                        <button type="button" class="btn btn-primary" onclick="openGoDownPreview()">
                           <i class="bi bi-file-earmark-text-fill"></i> Preview
                         </button>
                       </td>
@@ -2083,7 +2205,18 @@
                         </td>
                     </tr>
                     <tr>
-                      <td style="padding: 5px;">Cancel Process</td>
+                      <td style="padding: 5px;">Cancel Process in Immigration</td>
+                      <td style="padding: 5px;">
+                        <button type="button" class="btn btn-primary">
+                          <i class="bi bi-file-earmark-text-fill"></i> Preview
+                        </button>
+                      </td>
+                      <td style="padding:5px;">
+                        <button type="button" class="btn btn-success me-2" disabled><i class="bi bi-printer-fill  me-2"></i>Print</button>
+                        </td>
+                    </tr>
+                    <tr>
+                      <td style="padding: 5px;">Cancel Resign in Immigration</td>
                       <td style="padding: 5px;">
                         <button type="button" class="btn btn-primary">
                           <i class="bi bi-file-earmark-text-fill"></i> Preview
@@ -2257,7 +2390,140 @@
     </div>-->
   </div>
 </div>
+<div id="goDownPreviewDialog" class="modal" tabindex="-1">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Go Down Preview</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="closePreview()"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row mb-4">
+            <div class="col-4">
+              <label for="helperSelect" class="form-label">Select Helper:</label>
+              <select class="form-select" id="helperSelect">
+                <option value="">-- Select Helper --</option>
+                <option value="1">Mary Jane Santos</option>
+                <option value="2">Jennifer Smith</option>
+                <option value="3">Rose Martinez</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="row">
+            <!-- Document List -->
+            <div class="col-3">
+              <div class="list-group">
+                <button class="list-group-item list-group-item-action active" onclick="switchDocument('labour')">
+                  Labour Calculation
+                </button>
+                <button class="list-group-item list-group-item-action" onclick="switchDocument('e407')">
+                  E407 Document
+                </button>
+              </div>
+            </div>
+            
+            <!-- Document Preview -->
+            <div class="col-9">
+              <div class="card">
+                <div class="card-body position-relative">
+                  <!-- Document Viewer -->
+                  <div id="documentViewer" class="bg-light" style="height: 600px; overflow-y: auto;">
+                    <!-- Document content will be loaded here -->
+                  </div>
+                  
+                  <!-- Navigation Arrows -->
+                  <div class="position-absolute top-50 end-0 translate-middle-y">
+                    <button class="btn btn-light rounded-circle" onclick="nextPage()">
+                      <i class="bi bi-chevron-right"></i>
+                    </button>
+                  </div>
+                  <div class="position-absolute top-50 start-0 translate-middle-y">
+                    <button class="btn btn-light rounded-circle" onclick="previousPage()">
+                      <i class="bi bi-chevron-left"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Print</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
+
+<script>
+  let currentDocument = 'labour';
+let currentPage = 1;
+let totalPages = {
+  'labour': 3,
+  'e407': 2
+};
+
+function openGoDownPreview() {
+  const modal = new bootstrap.Modal(document.getElementById('goDownPreviewDialog'));
+  modal.show();
+  loadDocument('labour', 1); // Load first document by default
+}
+
+function switchDocument(docType) {
+  currentDocument = docType;
+  currentPage = 1;
+  loadDocument(docType, currentPage);
+  
+  // Update active state of list items
+  document.querySelectorAll('.list-group-item').forEach(item => {
+    item.classList.remove('active');
+  });
+  event.target.classList.add('active');
+}
+
+function loadDocument(docType, page) {
+  const viewer = document.getElementById('documentViewer');
+  
+  // This is where you would normally load the actual document content
+  // For now, we'll just show a placeholder
+  viewer.innerHTML = `
+    <div class="text-center p-5">
+      <h3>${docType === 'labour' ? 'Labour Calculation' : 'E407 Document'}</h3>
+      <p>Page ${page} of ${totalPages[docType]}</p>
+      <p>Document content would be displayed here</p>
+    </div>
+  `;
+  
+  // Update navigation buttons state
+  updateNavigationState();
+}
+
+function nextPage() {
+  if (currentPage < totalPages[currentDocument]) {
+    currentPage++;
+    loadDocument(currentDocument, currentPage);
+  }
+}
+
+function previousPage() {
+  if (currentPage > 1) {
+    currentPage--;
+    loadDocument(currentDocument, currentPage);
+  }
+}
+
+function updateNavigationState() {
+  const nextBtn = document.querySelector('.bi-chevron-right').parentElement;
+  const prevBtn = document.querySelector('.bi-chevron-left').parentElement;
+  
+  nextBtn.disabled = currentPage >= totalPages[currentDocument];
+  prevBtn.disabled = currentPage <= 1;
+}
+</script>
 <div id="updatedDocDialog" class="modal" tabindex="-1" >
   <div class="modal-dialog modal-xl" >
     <div class="modal-content">
@@ -2418,88 +2684,49 @@
   <div class="modal-dialog modal-lg" >
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">New Vocation</h5>
+        <h5 class="modal-title">Vocation History</h5>
         
         <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="closePreview()"></button>
       </div>
       <div class="modal-body">
-        <h5 class="heading-1 pl-3 mb-3 mt-3"><span>Ticket Part</span></h5>
 
+        <div class="row m-3">
+          <table class="px-5">
+            <tr><Td>Total Vocation Taken: 2</Td>
+            <td>Annual Leave Remain: 3</td>
+            </tr>
+          </table>
+        </div>
+    
         <div class="row mb-3">
-          <div class="form-group col-3">
-            <label class=" ">Departure From Hong Kong</label>
-            <input type="date" class="form-control " id="inputEmail3" >
+          <table class="table table-bordered">
+            <tr>
+              <td></td>
+              <td>Departure Date</td>
+              <td>Return Date</td>
+              <td>Vocation Period</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>10/01/2023</td>
+              <td>20/01/2023</td>
+              <td>10 days</td>
+              <td><button type="button" class="btn btn-outline-info"  onclick="completeVocation()"><i class="bi bi-search me-2"></i>View</button> </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>10/12/2024</td>
+              <td>25/12/2024</td>
+              <td>15 days</td>
+              <td><button type="button" class="btn btn-outline-info"><i class="bi bi-search me-2"></i>View</button> </td>
+            </tr>
+          </table>
           </div>
-          <div class="form-group col-4">
-            <label for="language">Refer this ticket as</label>
-            <select id="departurefr" name="language" class="form-select">
-              <option value="english">By Employer's gift</option>
-              <option value="chinese">By Helper money</option>
-              <option value="borrowMoney">Borrow money by employer</option>
-              <option value="chinese">Advance Current Contract</option>
-              <option value="chinese">End Contract Use</option>
-              <!-- Add more language options as needed -->
-            </select>
-          </div>
-        </div>
-        <div class="row mb-3">
-          <div class="form-group col-3">
-            <label class=" ">Returning to Hong Kong</label>
-            <input type="date" class="form-control " id="inputEmail3" >
-          </div>
-          <div class="form-group col-4">
-            <label for="language">Refer this ticket as</label>
-            <select id="departurefr" name="language" class="form-select">
-              <option value="english">By Employer's gift</option>
-              <option value="chinese">By Helper money</option>
-              <option value="borrowMoney">Borrow money by employer</option>
-              <option value="chinese">For Next Renew Use</option>
-              <!-- Add more language options as needed -->
-            </select>
-          </div>
-         
-        </div>
-        <h5 class="heading-1 pl-3 mb-3 mt-3"><span>Vocation Period</span></h5>
-
-        <div class="row mb-3">
-          <div class="form-group col-3">
-            <label class=" ">Total Days </label>
-            <input type="text" class="form-control " id="inputEmail3" value="5" readonly >
-          </div>
-        </div>
-        <div class="row mb-3">
-          <label class=" ">Refer Vocation Period Is </label>
-
-        </div>
-        <div class="row mb-3">
-          <div class="form-group col-3">
-          <label class=" ">No Pay Leave </label>
-          <input type="number" id="quantity" name="quantity" min="1" max="60">
-        </div>
-        <div class="form-group col-3">
-          <label class=" ">Pre Use Annual Leave </label>
-          <input type="number" id="quantity" name="quantity" min="1" max="60">
-        </div>
-        <div class="form-group col-3">
-          <label class=" ">Spend leave </label>
-          <input type="number" id="quantity" name="quantity" min="1" max="60">
-        </div>
-        <div class="form-group col-3">
-          <label class=" ">Still pay in Salary </label>
-          <input type="number" id="quantity" name="quantity" min="1" max="60">
-        </div>
-        <div class="form-group col-3">
-          <label class=" ">Regular Holiday </label>
-          <input type="number" id="VocationRegHoliday" name="quantity" min="1" max="60" >
-        </div>
-        <div class="form-group col-3">
-          <label class=" ">Statutory Holiday </label>
-          <input type="number" id="VocationStatHoliday" name="quantity" min="1" max="60">
-        </div>
-        </div>
+        
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary"  onclick="completeVocation()">Save</button>
+        
         <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closePreview()">Close</button>
       </div>
     </div>
@@ -4012,8 +4239,8 @@ function openPreviewDialog() {
     }
     
 function completeVocation(){
-  document.getElementById("newVacationDialog").style.display = "none";
-  document.getElementById("completedVacationDialog").style.display = "block";
+ // document.getElementById("newVacationDialog").style.display = "none";
+ // document.getElementById("completedVacationDialog").style.display = "block";
 
 }
 
@@ -4116,8 +4343,8 @@ function handleHelperRenewChange() {
 }
 
 // Global variables
-let currentDocument = null;
-let uploadedDocuments = new Map();
+//let currentDocument = null;
+//let uploadedDocuments = new Map();
 
 // Initialize when document is ready
 document.addEventListener('DOMContentLoaded', function() {
@@ -4497,6 +4724,7 @@ function getFormTemplate(docType) {
             `;
     }
 }
+
 </script>
 
 <style>
@@ -4848,4 +5076,5 @@ Add a background color to the button if it is clicked on (add the .active class 
     background-color: rgba(13,110,253,0.1);
     border-left: 3px solid #0d6efd;
 }
+
 </style>

@@ -1229,6 +1229,54 @@
                     <tr>
                       <td>NO. OF BEDROOM:</td>
                       <td><input type="number" id="quantity" name="quantity" min="1" max="10"></td>
+                      <td colspan="2"><div class="row mb-3">
+                        <div class="col-4">
+                          <label for="language">Type of Residence:</label>
+                          <select id="language" class="form-select" name="language">
+                            <option value="na" selected>-- Please Select --</option>
+                            <option value="english">House</option>
+                            <option value="chinese">Flat</option>
+                            <!-- Add more language options as needed -->
+                          </select>
+                        </div>
+                        <div class="col-8">
+                          <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a notes here" id="floatingTextarea2" style="height: 70px"></textarea>
+                            <label for="floatingTextarea2">Residence Address</label>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                      <div class="col-4">
+                        <label for="language">Address Proof Type</label>
+                        <select id="addressProofType" class="form-select" name="language" onchange="addressProofChange()">
+                          <option value="na" selected>-- Please Select --</option>
+                          <option value="own">Residence</option>
+                          <option value="rented">Public Housing </option>
+                          <!-- Add more language options as needed -->
+                        </select>
+                      </div>
+                      <div id="residenceTypeDiv" class="col-8" style="display: none;">
+                        <label for="language">Residence Type</label>
+                        <select id="housingType" class="form-select" name="language">
+                          <option value="na" selected>-- Please Select --</option>
+                          <option value="english">Name under employer</option>
+                          <option value="chinese">Name with under families member  </option>
+                          <option value="chi">Name not under families member   </option>
+                          <option value="eng">Name from Landlord   </option>
+                          <!-- Add more language options as needed -->
+                        </select>
+                      </div>
+                      <div id="housingTypeDiv" class="col-8" style="display: none;">
+                        <label for="language">Public Housing Type</label>
+                        <select id="housingType" class="form-select" name="language">
+                          <option value="na" selected>-- Please Select --</option>
+                          <option value="english">Rent</option>
+                          <option value="chinese">Own Property </option>
+                          <!-- Add more language options as needed -->
+                        </select>
+                      </div>
+                    </div></td>
                     </tr>
                     <tr>
                       <td>HELPER SLEEPING ARRANGEMENT:</td>
@@ -1670,6 +1718,20 @@ function showChildAgeFields() {
 }
 
 
+function addressProofChange(){
+  var addressProofType = document.getElementById('addressProofType');
+  var housingTypeDiv = document.getElementById('housingTypeDiv');
+  var residenceTypeDiv = document.getElementById('residenceTypeDiv');
+  if(addressProofType.value ==="own"){
+    housingTypeDiv.style.display ='none';
+    residenceTypeDiv.style.display='block';
+  }else if(addressProofType.value ==="rented"){
+
+    housingTypeDiv.style.display ='block';
+    residenceTypeDiv.style.display='none';
+  }
+  
+}
 </script>
 <style>
 .alert-top-right {
