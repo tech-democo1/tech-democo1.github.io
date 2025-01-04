@@ -901,19 +901,18 @@
                   <div class="accordion-item">
                     <h2 class="accordion-header">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                        Add-on Service (For One-time Calculation)
+                        Add-on Service (For Go Down)
                       </button>
                     </h2>
                     <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                       <div class="accordion-body">
-                      <button  type="button" class="btn btn-primary" ><i class="bi bi-file-earmark-plus-fill me-2"></i></i>Add</button>
-                        <table class="table table-bordered" style="max-width: 100%;">
+                      <button  type="button" class="btn btn-primary mb-3" onclick="addOnGoDownHelper()"><i class="bi bi-file-earmark-plus-fill me-2"></i></i>Add</button>
+                        <table class="table table-bordered mb-5" style="max-width: 100%;">
                       
                           <tr>
                             <td>Helper Name</td>
                             <td>Employer name</td>
-                            <td>Helper's Identity Number</td>
-                            <td>Contract End Date</td>
+                            <td>First Day of Work</td>
                             <td>Last Visa Expire Date</td>
                             <td>Effective Date</td>
                             <td>Last Working Date</td>
@@ -921,13 +920,202 @@
                           <tr>
                             <td>Surname: Mary<br/>Middle Name: A <br/>Given Name: B </td>
                             <td>Chan ka</td>
-                            <td>HKID: A12345 <br/> Passport: B1245</td>
-                            <td>01/01/2024</td>
+                            <td>01/10/2023</td>
                             <td>01/12/2023</td>
                             <td>One Month Later</td>
                             <td>14/12/2023</td>
+                            <td><i class="bi bi-pencil-square"></i><i class="bi bi-trash"></i></td>
                           </tr>
                         </table>
+
+                          <script>
+                            function addOnGoDownHelper(){
+                              const gps = document.getElementsByClassName('addOnGoDownHelperGroup');
+
+                                  for (let i = 0; i < gps.length; i++) {
+                                    gps[i].style.display = 'block';
+                                      }
+
+                            }
+                          </script>
+
+                        <div class="addOnGoDownHelperGroup" style="display: none;">
+                          <div class="row mb-3">
+                              <h5>Details of the helper:</h5>
+                          </div>
+                          <div class="row">
+                            <div class="col-8">
+                              <div class="row">
+                                <label>Employer Name</label>
+                                <div class="form-group col-sm-6">
+                                  <input type="text" class="form-control"  placeholder="Family Name">
+                                </div>
+                                <div class="form-group col-sm-6">
+                                  <input type="text" class="form-control" placeholder="First Name">
+                                </div>
+                              </div>
+                              <div class="row ">
+                                <label>Helper Name</label>
+                                <div class="form-group col-sm-6">
+                                  <input type="text" class="form-control"  placeholder="Family Name">
+                                </div>
+                                <div class="form-group col-sm-6">
+                                  <input type="text" class="form-control" placeholder="First Name">
+                                </div>
+                              </div>
+                          </div>
+                            <div class="col-4">
+                              <div class="drop-container" style="height: 100%;" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event)">
+                                <p>Drag the helper Passport / HKID here</p>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="form-group col-sm-3">
+                              <label>First day of started work</label>
+                              <input type="date" class="form-control" >
+                            </div>
+                            <div class="form-group col-sm-3">
+                              <label>Salary cut-off date</label>
+                              <input type="date" class="form-control" >
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="form-group col-sm-3">
+                              <label>End Contract Type</label>
+                              <select id="endContractType2" class="form-select" onchange="endContractType2Onchange()">
+                                <option value="none">-Please Select-</option>
+                                <option value="terminateContract2">Terminate Contract</option>
+                                <option value="finishContract2">Finish Contract</option>
+                                </select>
+                            </div>
+                            <div id="terminateContractReason2" class="form-group col-sm-4" style="display:none">
+                              <label>Terminate Situation</label>
+                              <select class="form-select" >
+                                <option value="none">-Please Select-</option>
+                                <option value="jan1">Employer without 1 month notice</option>
+                                <option value="cny1">Employer give 1 month notice</option>
+                                <option value="">Helper without 1 month notice</option>
+                                <option value="">Helper give 1 month notice</option>
+                                </select>
+                            </div>
+                            <div id="terminateContractEffectiveDate2" class="form-group col-sm-4" style="display:none">
+                              <label>Effective Date</label>
+                              <input type="date" class="form-control" value="2024-11-01" >
+                            </div>
+    
+                            <div id="finishContractReason2" class="form-group col-sm-6" style="display:none">
+                              <label>Finish Contract Reason</label>
+                              <select class="form-select" >
+                                <option value="none">-Please Select-</option>
+                                <option value="jan1">Employer no longer need a helper  </option>
+                                <option value="cny1">Helper not renew  </option>
+                                <option value="">Employer not renew find replacement  </option>
+                                </select>
+                            </div>
+                          </div>
+                          <script>
+                            function endContractType2Onchange(){
+                              const val = document.getElementById('endContractType2').value;
+                              if(val =="terminateContract2"){
+                                document.getElementById('terminateContractReason2').style.display = "block";
+                                document.getElementById('terminateContractEffectiveDate2').style.display = 'block';
+                                document.getElementById('finishContractReason2').style.display = 'none';
+                              }else{
+                                document.getElementById('terminateContractReason2').style.display = 'none';
+                                document.getElementById('terminateContractEffectiveDate2').style.display = 'none';
+                                document.getElementById('finishContractReason2').style.display = 'block';
+                              }
+                            }
+                          </script>
+
+                          <div class="row">
+                            <div class="form-group col-sm-6">
+                              <label>Have you used last contract annual leave?</label>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="lastContractLeave" 
+                                         id="lastContractYes2" value="yes" onchange="handleLastContractLeave2()">
+                                  <label class="form-check-label" for="lastContractYes">
+                                      Yes
+                                  </label>
+                              </div>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="lastContractLeave" 
+                                         id="lastContractNo2" value="no" onchange="handleLastContractLeave2()" checked>
+                                  <label class="form-check-label" for="lastContractNo">
+                                      No
+                                  </label>
+                              </div>
+                      
+                              <!-- Days Used Selection (initially hidden) -->
+                              <div id="lastContractDaysDiv2" class="mt-3" style="display: none;">
+                                  <label>Days used:</label>
+                                  <div class="d-flex align-items-center gap-2">
+                                      <select class="form-select" id="lastContractDays2" style="width: auto;">
+                                          <option value="all">USED ALL</option>
+                                          <!-- Will be populated 1-31 -->
+                                      </select>
+                                  </div>
+                              </div>
+                              <script>
+                                  function handleLastContractLeave2() {
+                                      const hasUsed = document.getElementById('lastContractYes2').checked;
+                                      const daysDiv = document.getElementById('lastContractDaysDiv2');
+                                      
+                                      if (hasUsed) {
+                                          daysDiv.style.display = 'block';
+                                      } else {
+                                          daysDiv.style.display = 'none';
+                                          document.getElementById('lastContractDays2').value = 'all'; // Reset to default
+                                      }
+                                  }
+                              </script>
+                          </div>
+                          <div class="form-group col-sm-6">
+                            <label>Have you used current contract annual leave?</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="currentContractLeave" 
+                                       id="currentContractYes" value="yes" onchange="handleCurrentContractLeave()">
+                                <label class="form-check-label" for="currentContractYes">
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="currentContractLeave" 
+                                       id="currentContractNo" value="no" onchange="handleCurrentContractLeave()" checked>
+                                <label class="form-check-label" for="currentContractNo">
+                                    No
+                                </label>
+                            </div>
+                    
+                            <!-- Days Used Selection (initially hidden) -->
+                            <div id="currentContractDaysDiv" class="mt-3" style="display: none;">
+                                <label>Days used:</label>
+                                <div class="d-flex align-items-center gap-2">
+                                    <select class="form-select" id="currentContractDays" style="width: auto;">
+                                        <option value="all">USED ALL</option>
+                                        <!-- Will be populated 1-31 -->
+                                    </select>
+                                </div>
+                            </div>
+
+                          </div>
+
+                          </div>
+ <div class="row mb-3">
+  <H6>For Immigration department Use for E407 </H6>
+                          <div class="form-group col-sm-6">
+                            <textarea class="form-control" placeholder="" id="floatingTextarea21" style="height: 100px"></textarea>
+                            <label for="floatingTextarea21">Employer Reason</label>
+                          </div>
+                          <div class="form-group col-sm-6">
+                            <textarea class="form-control" placeholder="" id="floatingTextarea22" style="height: 100px"></textarea>
+                            <label for="floatingTextarea22">Helper Reason</label>
+                          </div>
+                        </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1258,6 +1446,10 @@
                           <input type="text" class="form-control" value="C343747" readonly>
                         </div>
                         <div class="form-group col-sm-3">
+                          <label>Philippine Mobile</label>
+                          <input type="text" class="form-control" readonly required>
+                        </div>
+                        <div class="form-group col-sm-3">
                           <label>Email Address</label>
                           <input type="text" class="form-control" value="C343747" readonly>
                         </div>
@@ -1313,7 +1505,7 @@
                   
                       </div>
                       <div class="row mb-3">
-                        <div id="terminateContractReason" class="form-group col-sm-6">
+                        <div id="arrangementOfHelperApproved" class="form-group col-sm-6">
                           <label>If application is approved, arrangement of the helper's home leave will be as follows</label>
                           <select class="form-select" >
                             <option value="none">-Please Select-</option>
@@ -1323,25 +1515,6 @@
                         </div>
 
                       </div>
-                      </div>
-                      <div class="row mb-3">
-                        <div class="form-group col-sm-3">
-                          <label>HK Mobile</label>
-                          <input type="text" class="form-control" readonly required>
-                        </div>
-                        <div class="form-group col-sm-3">
-                          <label>Philippine Mobile</label>
-                          <input type="text" class="form-control" readonly required>
-                        </div>
-                        <div class="form-group col-sm-3">
-                          <label>Email Address</label>
-                          <input type="text" class="form-control"  readonly required>
-                        </div>
-        
-                        <div class="form-group col-3">
-                          <label>Email Address Password</label>
-                          <input type="text" class="form-control" readonly>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -1378,16 +1551,21 @@
                             <label>Last Working Date</label>
                             <input type="date" class="form-control" value="2024-11-01" readonly required>
                           </div>
-                        <div id="terminateContractReason" class="form-group col-sm-6" style="display:none">
-                          <label>Terminate Contract Reason</label>
+                        <div id="terminateContractReason" class="form-group col-sm-4" style="display:none">
+                          <label>Terminate Situation</label>
                           <select class="form-select" >
                             <option value="none">-Please Select-</option>
-                            <option value="jan1">Employer without 1 month notice - effective date </option>
-                            <option value="cny1">Employer give 1 month notice - effective date </option>
-                            <option value="">Helper without 1 month notice - effective date </option>
-                            <option value="">Helper give 1 month notice - effective date </option>
+                            <option value="jan1">Employer without 1 month notice</option>
+                            <option value="cny1">Employer give 1 month notice</option>
+                            <option value="">Helper without 1 month notice</option>
+                            <option value="">Helper give 1 month notice</option>
                             </select>
                         </div>
+                        <div id="terminateContractEffectiveDate" class="form-group col-sm-4" style="display:none">
+                          <label>Effective Date</label>
+                          <input type="date" class="form-control" value="2024-11-01" >
+                        </div>
+
                         <div id="finishContractReason" class="form-group col-sm-6" style="display:none">
                           <label>Finish Contract Reason</label>
                           <select class="form-select" >
@@ -1468,6 +1646,24 @@
                         const currentContractSelect = document.getElementById('currentContractDays');
                         
                         [lastContractSelect, currentContractSelect].forEach(select => {
+                            // Keep the "USED ALL" option and add 1-31
+                            const allOption = select.options[0];
+                            select.innerHTML = ''; // Clear all options
+                            select.appendChild(allOption); // Add back "USED ALL"
+                            
+                            // Add number options 1-31
+                            for (let i = 1; i <= 31; i++) {
+                                const option = document.createElement('option');
+                                option.value = i;
+                                option.textContent = i;
+                                select.appendChild(option);
+                            }
+                        });
+
+                        const lastContractSelect2 = document.getElementById('lastContractDays2');
+                        const currentContractSelect2 = document.getElementById('currentContractDays2');
+                        
+                        [lastContractSelect2, currentContractSelect2].forEach(select => {
                             // Keep the "USED ALL" option and add 1-31
                             const allOption = select.options[0];
                             select.innerHTML = ''; // Clear all options
@@ -1582,7 +1778,37 @@
                           <div id="festivalDropdowns" class="mt-3">
                               <!-- Dropdowns will be generated here -->
                           </div>
-                      </div><script>
+                      </div>
+                      <div class="form-group col-sm-6">
+                        <label>Did you have any Regular holiday haven't used?</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="regularHoliday" id="hasRegularHoliday" value="yes" onchange="handleRegularHolidayChange()">
+                            <label class="form-check-label" for="hasRegularHoliday">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="regularHoliday" id="noRegularHoliday" value="no" onchange="handleRegularHolidayChange()" checked>
+                            <label class="form-check-label" for="noRegularHoliday">
+                                No
+                            </label>
+                        </div>
+                    
+                        <!-- Number of days selector (initially hidden) -->
+                        <div id="regularHolidayDaysDiv" style="display: none;" class="mt-3">
+                            <label>Number of unused regular holidays:</label>
+                            <select class="form-select" id="regularHolidayDaysSelect" onchange="generateDatePickers()">
+                                <!-- Will be populated 1-30 -->
+                            </select>
+                        </div>
+                    
+                        <!-- Date pickers container (initially hidden) -->
+                        <div id="datePickers" class="mt-3">
+                            <!-- Date pickers will be generated here -->
+                        </div>
+                    </div>
+                      
+                      <script>
                         // List of statutory holidays
                         const festivals = [
                             "New Year's Day",
@@ -1695,34 +1921,7 @@
                         </style>
                       </div>
                         <div class="row endContractQAGroup">
-                          <div class="form-group col-sm-6">
-                            <label>Did you have any Regular holiday haven't used?</label>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="regularHoliday" id="hasRegularHoliday" value="yes" onchange="handleRegularHolidayChange()">
-                                <label class="form-check-label" for="hasRegularHoliday">
-                                    Yes
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="regularHoliday" id="noRegularHoliday" value="no" onchange="handleRegularHolidayChange()" checked>
-                                <label class="form-check-label" for="noRegularHoliday">
-                                    No
-                                </label>
-                            </div>
-                        
-                            <!-- Number of days selector (initially hidden) -->
-                            <div id="regularHolidayDaysDiv" style="display: none;" class="mt-3">
-                                <label>Number of unused regular holidays:</label>
-                                <select class="form-select" id="regularHolidayDaysSelect" onchange="generateDatePickers()">
-                                    <!-- Will be populated 1-30 -->
-                                </select>
-                            </div>
-                        
-                            <!-- Date pickers container (initially hidden) -->
-                            <div id="datePickers" class="mt-3">
-                                <!-- Date pickers will be generated here -->
-                            </div>
-                        </div>
+                         
                         
                         <script>
                         // Initialize the days select options (1-30)
@@ -1858,6 +2057,18 @@
                         }
                         </style>
                         </div>
+                        <div class="row mb-3">
+                          <div class="form-group col-sm-6">
+                            <textarea class="form-control" placeholder="" id="floatingTextarea21" style="height: 100px"></textarea>
+                            <label for="floatingTextarea21">Employer Reason</label>
+                          </div>
+                          <div class="form-group col-sm-6">
+                            <textarea class="form-control" placeholder="" id="floatingTextarea22" style="height: 100px"></textarea>
+                            <label for="floatingTextarea22">Helper Reason</label>
+                          </div>
+                        </div>
+
+
                         <div class="row">
                           <div class="form-group col-sm-3">
                             <button type="button" class="btn btn-light" style="text-align: bottom;" onclick="cancelEndContract()">cancel</button>
@@ -1905,7 +2116,7 @@
                           </div>
                           <div class="form-group col-4">
                             <label for="language">Refer this ticket as</label>
-                            <select id="departurefr" name="language" class="form-select">
+                            <select id="departureFromHongKong" name="language" class="form-select" onchange="departureFromHongKongOnChange()">
                               <option value="english">By Employer's gift</option>
                               <option value="chinese">By Helper money</option>
                               <option value="borrowMoney">Borrow money by employer</option>
@@ -1914,7 +2125,23 @@
                               <!-- Add more language options as needed -->
                             </select>
                           </div>
+                          <div class="form-group col-3" id="departureBorrowAmount" style="display: none;">
+                            <label class=" ">Total Amount Borrowed</label>
+                            <input type="text" class="form-control " id="inputEmail3" >
+                          </div>
                         </div>
+                        <script>
+                          function departureFromHongKongOnChange(){
+                            const t = document.getElementById("departureFromHongKong").value;
+                            if(t=="borrowMoney"){
+                              document.getElementById("departureBorrowAmount").style.display = "block";
+                            }else {
+
+                              document.getElementById("departureBorrowAmount").style.display = "none";
+                            }
+                            
+                          }
+                        </script>
                         <div class="row mb-3">
                           <div class="form-group col-3">
                             <label class=" ">Returning to Hong Kong</label>
@@ -1922,7 +2149,7 @@
                           </div>
                           <div class="form-group col-4">
                             <label for="language">Refer this ticket as</label>
-                            <select id="departurefr" name="language" class="form-select">
+                            <select id="returnToHongKong" name="language" class="form-select" onchange="returnToHongKongOnChange()">
                               <option value="english">By Employer's gift</option>
                               <option value="chinese">By Helper money</option>
                               <option value="borrowMoney">Borrow money by employer</option>
@@ -1930,8 +2157,25 @@
                               <!-- Add more language options as needed -->
                             </select>
                           </div>
+                          <div class="form-group col-3" id="returnBorrowAmount" style="display: none;">
+                            <label class=" ">Total Amount Borrowed</label>
+                            <input type="text" class="form-control " id="inputEmail3" >
+                          </div>
                          
                         </div>
+
+                        <script>
+                          function returnToHongKongOnChange(){
+                            const t = document.getElementById("returnToHongKong").value;
+                            if(t=="borrowMoney"){
+                              document.getElementById("returnBorrowAmount").style.display = "block";
+                            }else {
+
+                              document.getElementById("returnBorrowAmount").style.display = "none";
+                            }
+                            
+                          }
+                        </script>
                         <h5 class="heading-1 pl-3 mb-3 mt-3"><span>Vocation Period</span></h5>
                 
                         <div class="row mb-3">
@@ -1992,10 +2236,10 @@
                       <div class="row mb-3">
                         <div class="form-group col-sm-4">
                           <label>Cancel Type</label>
-                          <select id="cancelType" class="form-select" >
+                          <select id="cancelType" class="form-select" onchange="cancelTypeOnchange()" >
                             <option value="none">-Please Select-</option>
-                            <option value="terminateContract">Cancel Process in Immigration</option>
-                            <option value="finishContract">Cancel Resign in Immigration</option>
+                            <option value="cancelProcess">Cancel Process in Immigration</option>
+                            <option value="cancelResign">Cancel Resign in Immigration</option>
                             </select>
                         </div>
                         <div class="form-group col-sm-3" id="applyCancelApplyBtn">
@@ -2003,7 +2247,7 @@
 
                         </div>
                       </div>
-
+                      <div id="cancelResignGroup" style="display: none;">
                       <div class="row mb-3">
                         <div class="form-group col-sm-4">
                         <label for="engName">Resignation letter received for asknowelge number:</label>
@@ -2014,18 +2258,29 @@
                       <input type="date" id="start" name="trip-start" value="2024-07-22"  />
                       </div>
                       </div>
-                    <div class="row mb-3">
-                      <div class="form-group col-sm-4">
-                        <label>Submitted by</label>
-                          <select id="cancelType" class="form-select" >
-                            <option value="none">-Please Select-</option>
-                            <option value="terminateContract">Email</option>
-                            <option value="finishContract">Hand to Immigration Office</option>
-                            </select>
+                      <div class="row mb-3">
+                        <div class="form-group col-sm-4">
+                          <label>Submitted by</label>
+                            <select id="cancelMethod" class="form-select" >
+                              <option value="none">-Please Select-</option>
+                              <option value="terminateContract">Email</option>
+                              <option value="finishContract">Hand to Immigration Office</option>
+                              </select>
+                        </div>
                       </div>
                     </div>
-                      
-  
+                    <script>
+                        function cancelTypeOnchange(){
+                          const t = document.getElementById("cancelType").value;
+                            if(t=="cancelResign"){
+                              document.getElementById("cancelResignGroup").style.display = "block";
+                            }else {
+
+                              document.getElementById("cancelResignGroup").style.display = "none";
+                            }
+                        }
+
+                    </script>
                     </div>
                   </div>
                 </div>
@@ -2315,7 +2570,7 @@
                 <button class="accordion1" onclick="openCalDia()">Labour Calculation</button>
                 <button class="accordion1" onclick="openNewVocationDialog()">New Vocation</button>
               </div>
-              <div class="well">
+              <div class="well" style="display: none;">
                 <button class="accordion1" onclick="openCalDia()">Helper History</button>
 
                 <button class="accordion1" onclick="openCalDia()">Helper History<span><i class="bi bi-info-circle-fill" data-toggle="tooltip" data-placement="top" title="Helper used to under employer"></i></span></button>
@@ -4247,24 +4502,28 @@ function completeVocation(){
 function endContract(){
   document.getElementById("endContractQA").style.display = "block";
   const endContractType = document.getElementById('endContractType').value;
-
+  
   if(endContractType==='terminateContract'){
     document.getElementById("terminateContractReason").style.display = "block";
+    document.getElementById("terminateContractEffectiveDate").style.display = "block";
     document.getElementById("finishContractReason").style.display = "none";
-    document.getElementById("applyEndContractBtn").style.display = "none";
+    //document.getElementById("applyEndContractBtn").style.display = "none";
     document.getElementById("cancelEndContractBtn").style.display = "none";
     document.getElementById("confirmEndContractBtn").style.display = "none";
   }else if (endContractType==='finishContract'){
     document.getElementById("finishContractReason").style.display = "block";
     document.getElementById("terminateContractReason").style.display = "none";
-    document.getElementById("applyEndContractBtn").style.display = "none";
+    document.getElementById("terminateContractEffectiveDate").style.display = "none";
+   // document.getElementById("applyEndContractBtn").style.display = "none";
     document.getElementById("cancelEndContractBtn").style.display = "block";
     document.getElementById("confirmEndContractBtn").style.display = "block";
   }
 }
 
 function cancelEndContract(){
+  
   document.getElementById("terminateContractReason").style.display = "none";
+  document.getElementById("terminateContractEffectiveDate").style.display = "none";
   document.getElementById("finishContractReason").style.display = "none";
   document.getElementById("endContractQA").style.display = "none";
   document.getElementById('endContractType').value = "none";
