@@ -1144,7 +1144,7 @@
       <div class="row">
        
           
-  <div id="accordion" style="display: none;">
+  <div id="accordion" >
           <div class="card col">
             <div class="card-header" id="headingThree">
               <h5 class="mb-0">
@@ -1169,7 +1169,11 @@
                       <td>CODE:</td>
                       <td><input type="text" id="gender" name="gender" value="" readonly required></td>
                       <td>EXPECTED COMMENCEMENT DATE:</td>
-                      <td><input type="date" id="start" name="trip-start" min="2024-09-14" max="2025-12-31" /></td>
+                      <td><input type="date" id="start" name="trip-start" min="2024-09-14" max="2025-12-31" /><br><div>
+                        <input type="checkbox" id="horns" name="horns" />
+                        <label for="horns">ASAP</label>
+                      </div>
+                      </td>
 
                     
                     </tr>
@@ -1516,10 +1520,10 @@
   
 
 if(workerTypeSelect.value==="renew"){
-  accordion.style.display='none';
+  accordion.style.display='block';
 employReasonSelect.value='renew';
 }else if(workerTypeSelect.value==="finish"){
-  accordion.style.display='none';
+  accordion.style.display='block';
 }
 
 else if (workerTypeSelect.value==="oversea"){
@@ -1530,7 +1534,7 @@ else if(workerTypeSelect.finish==="exhk"){
 }
 
 if(employReasonSelect.value==="renew"){
-  accordion.style.display='none';
+  accordion.style.display='block';
   //workerTypeSelect.value='renew';
 
 }else if (employReasonSelect.value==="replace"||employReasonSelect.finish==="addition"||employReasonSelect.finish==="first"){
