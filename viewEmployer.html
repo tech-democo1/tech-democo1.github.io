@@ -814,12 +814,7 @@
                               </tr>
                             </tbody>
                           </table>
-<div class="row mb-3">
-                          <div class="form-group col-sm-12">
- <textarea class="form-control" placeholder="" id="floatingTextarea21" style="height: 100px"></textarea>
-                            <label for="floatingTextarea21">Remark</label>
-                            </div>
-                        </div>
+
                       </div>
 
                       <div class="row mb-3">
@@ -848,12 +843,7 @@
                               </tr>
                             </tbody>
                           </table>
-<div class="row mb-3">
-                          <div class="form-group col-sm-12">
- <textarea class="form-control" placeholder="" id="floatingTextarea21" style="height: 100px"></textarea>
-                            <label for="floatingTextarea21">Remark</label>
-                            </div>
-                        </div>
+
                       </div>
                       
 
@@ -981,7 +971,7 @@
                     </h2>
                     <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                       <div class="accordion-body">
-                      <button  type="button" class="btn btn-primary mb-3" onclick="addOnGoDownHelper()"><i class="bi bi-file-earmark-plus-fill me-2"></i></i>Add</button>
+                      <button  type="button" class="btn btn-primary mb-3" onclick="addOnGoDownHelper()"><i class="bi bi-file-earmark-plus-fill me-2"></i></i>Apply</button>
                         <table class="table table-bordered mb-5" style="max-width: 100%;">
                       
                           <tr>
@@ -2452,7 +2442,39 @@
                 <button type="button" class="btn btn-primary">Save Note</button>
                 </div>
     </div>
-        
+        <style>
+          .reddot {
+  height: 25px;
+  width: 25px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.greendot {
+  height: 25px;
+  width: 25px;
+  background-color: green;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.yellowdot {
+  height: 25px;
+  width: 25px;
+  background-color: yellow;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.greydot {
+  height: 25px;
+  width: 25px;
+  background-color: grey;
+  border-radius: 50%;
+  display: inline-block;
+}
+        </style>
         <div class="col-sm-4">
             <div class="well">
                 <h5>Print Set</h5>
@@ -2461,7 +2483,14 @@
                 <div class="panelPrint">
                   <table style="margin: 5px; border-collapse: separate; border-spacing: 5px;">
                     <tr>
+                      <td style="padding: 5px;"></td>
+                      <td style="padding: 5px;">Status</td>
+                      <td style="padding: 5px;"></td>
+                      <td style="padding: 5px;"></td>
+                    </tr>
+                    <tr>
                       <td style="padding: 5px;">Receipt</td>
+                      <td ><span class="greendot"></span></td>
                       <td style="padding:5px;">
                         <!--<span id="jobOrderStatus" class="text-bg-primary" >Ready to print</span>-->
                         <button type="button" class="btn btn-primary">
@@ -2474,6 +2503,7 @@
                     </tr>
                     <tr>
                       <td style="padding: 5px;">Oversea Agency Use</td>
+                      <td ><span class="greendot"></span></td>
                       <td style="padding: 5px;">
                        <!-- <span id="jobOrderStatus" class="text-bg-danger" >Info Missing</span>-->
                         <button type="button" class="btn btn-primary">
@@ -2486,6 +2516,7 @@
                     </tr>
                     <tr>
                       <td style="padding: 5px;">Helper Doc</td>
+                      <td ><span class="yellowdot"></span></td>
                       <td style="padding: 5px;">
                         <!--<span id="jobOrderStatus" class="text-bg-danger" >Info Missing</span>-->
                         <button type="button" class="btn btn-primary">
@@ -2498,6 +2529,7 @@
                     </tr>
                     <tr>
                       <td style="padding: 5px;">Immigration Set</td>
+                      <td ><span class="yellowdot"></span></td>
                       <td style="padding: 5px;">
                         <!--<span id="jobOrderStatus" class="text-bg-danger" >Info Missing</span>-->
                         <button type="button" class="btn btn-primary">
@@ -2510,6 +2542,7 @@
                     </tr>
                     <tr>
                       <td style="padding: 5px;">ID407 Contract</td>
+                      <td ><span class="reddot"></span></td>
                       <td style="padding: 5px;">
                          <!--<span id="jobOrderStatus" class="text-bg-danger" >Info Missing</span>-->
                         <button type="button" class="btn btn-primary">
@@ -2522,6 +2555,7 @@
                     </tr>
                     <tr>
                       <td style="padding: 5px;">Consulate Set</td>
+                      <td ><span class="reddot"></span></td>
                       <td style="padding: 5px;">
                        <!-- <span id="jobOrderStatus" class="text-bg-danger" >Info Missing</span>-->
                         <button type="button" class="btn btn-primary">
@@ -2534,6 +2568,7 @@
                     </tr>
                     <tr>
                       <td style="padding: 5px;">Start Work Set</td>
+                      <td ><span class="reddot"></span></td>
                       <td style="padding: 5px;">
                         <!--<span id="jobOrderStatus" class="text-bg-danger" >Info Missing</span>-->
                         <button type="button" class="btn btn-primary">
@@ -2558,7 +2593,14 @@
                 <div class="panelPrint">
                   <table style="margin: 5px; border-collapse: separate; border-spacing: 5px;">
                     <tr>
+                      <td style="padding: 5px;"></td>
+                      <td style="padding: 5px;">Status</td>
+                      <td style="padding: 5px;"></td>
+                      <td style="padding: 5px;"></td>
+                    </tr>
+                    <tr>
                       <td style="padding: 5px;">Go Down</td>
+                      <td ><span class="reddot"></span></td>
                       <td style="padding:5px;">
                         <button type="button" class="btn btn-primary" onclick="openGoDownPreview()">
                           <i class="bi bi-file-earmark-text-fill"></i> Preview
@@ -2570,6 +2612,7 @@
                     </tr>
                     <tr>
                       <td style="padding: 5px;">Change Address</td>
+                      <td ><span class="reddot"></span></td>
                       <td style="padding: 5px;">
                         <button type="button" class="btn btn-primary">
                           <i class="bi bi-file-earmark-text-fill"></i> Preview
@@ -2581,6 +2624,7 @@
                     </tr>
                     <tr>
                       <td style="padding: 5px;">Cancel Process in Immigration</td>
+                      <td ><span class="reddot"></span></td>
                       <td style="padding: 5px;">
                         <button type="button" class="btn btn-primary">
                           <i class="bi bi-file-earmark-text-fill"></i> Preview
@@ -2592,6 +2636,7 @@
                     </tr>
                     <tr>
                       <td style="padding: 5px;">Cancel Resign in Immigration</td>
+                      <td ><span class="reddot"></span></td>
                       <td style="padding: 5px;">
                         <button type="button" class="btn btn-primary">
                           <i class="bi bi-file-earmark-text-fill"></i> Preview
@@ -2603,6 +2648,7 @@
                     </tr>
                     <tr>
                       <td style="padding: 5px;">Refund Fees</td>
+                      <td ><span class="reddot"></span></td>
                       <td style="padding: 5px;">
                         <button type="button" class="btn btn-primary">
                           <i class="bi bi-file-earmark-text-fill"></i> Preview
@@ -2614,6 +2660,7 @@
                     </tr>
                      <tr>
                       <td style="padding: 5px;">Vocation Use</td>
+                      <td ><span class="reddot"></span></td>
                       <td style="padding: 5px;">
                         <button type="button" class="btn btn-primary">
                           <i class="bi bi-file-earmark-text-fill"></i> Preview
@@ -2631,10 +2678,18 @@
               -->  
               </div>
               <button class="accordionPrint">Extend Visa</button>
+
                 <div class="panelPrint">
                   <table style="margin: 5px; border-collapse: separate; border-spacing: 5px;">
                     <tr>
+                      <td style="padding: 5px;"></td>
+                      <td style="padding: 5px;">Status</td>
+                      <td style="padding: 5px;"></td>
+                      <td style="padding: 5px;"></td>
+                    </tr>
+                    <tr>
                       <td style="padding: 5px;">After Finish Contract</td>
+                      <td ><span class="greydot"></span></td>
                       <td style="padding:5px;">
                         <button type="button" class="btn btn-primary">
                           <i class="bi bi-file-earmark-text-fill"></i> Preview
@@ -2646,6 +2701,7 @@
                     </tr>
                     <tr>
                       <td style="padding: 5px;">After Renew Passport</td>
+                      <td ><span class="greydot"></span></td>
                       <td style="padding: 5px;">
                         <button type="button" class="btn btn-primary">
                           <i class="bi bi-file-earmark-text-fill"></i> Preview
@@ -2657,6 +2713,7 @@
                     </tr>
                     <tr>
                       <td style="padding: 5px;">Overstay</td>
+                      <td ><span class="greydot"></span></td>
                       <td style="padding: 5px;">
                         <button type="button" class="btn btn-primary">
                           <i class="bi bi-file-earmark-text-fill"></i> Preview
@@ -2668,6 +2725,7 @@
                     </tr>
                     <tr>
                       <td style="padding: 5px;">Entry HK</td>
+                      <td ><span class="greydot"></span></td>
                       <td style="padding: 5px;">
                         <button type="button" class="btn btn-primary">
                           <i class="bi bi-file-earmark-text-fill"></i> Preview
@@ -3452,7 +3510,12 @@ function updateNavigationState() {
       <label for="floatingTextarea22">Helper Reason</label>
     </div>
   </div>
-
+  <div class="row mb-3">
+    <div class="form-group col-sm-12">
+<textarea class="form-control" placeholder="" id="floatingTextarea21" style="height: 100px"></textarea>
+      <label for="floatingTextarea21">Remark</label>
+      </div>
+  </div>
 
 
         </div>
