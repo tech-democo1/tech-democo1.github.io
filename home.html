@@ -1085,25 +1085,28 @@
       <div class="row mb-3">
         <div class="col-6">
          <label for="language">Any replacement Helper still working now or leaved already?</label><span style="color: red;">*</span>
-         <select id="workerTypeSelect" class="form-select" name="language" onchange="hideJobOrder()">
+         <select id="workerTypeSelect" class="form-select" name="language" onchange="hideJobOrder()" style="display: none;">
  
            <option value="na" selected>-- Please Select --</option>
            <option value="oversea" >Yes</option>
            <option value="exhk">No</option>
            <!-- Add more language options as needed -->
          </select>
+         <input type="number" id="quantity" name="quantity" min="0" max="5" value="0">
  
         </div>
  
         <div class="col-6">
            <label for="language">Any additional Helper still working now or leaved already?</label><span style="color: red;">*</span>
-             <select id="employReasonSelect" class="form-select" name="language" onchange="hideJobOrder()">
+             <select id="employReasonSelect" class="form-select" name="language" onchange="hideJobOrder()" style="display: none;">
  
                <option value="na" selected>-- Please Select --</option>
                <option value="first">Yes</option>
                <option value="renew">No</option>
                <!-- Add more language options as needed -->
              </select>
+
+             <input type="number" id="quantity" name="quantity" min="0" max="5" value="0">
            </div>
        </div>
 
